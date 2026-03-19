@@ -1,0 +1,39 @@
+@use 'sass:math';
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+$background-top-position: (
+	variables.$section-padding-y +
+		math.div((variables.$section-title-font-size * variables.$section-title-line-height), 2) * 1.75
+);
+$background-min-top-position: (
+	variables.$section-min-padding-y +
+		math.div((variables.$section-title-min-font-size * variables.$section-title-line-height), 2) *
+		1.75
+);
+
+.section-services {
+	box-shadow: inset 0 mixins.fluid($background-min-top-position, $background-top-position) 0 0
+		variables.$color-white;
+	background-color: rgba(variables.$color-gray-200, 0.5);
+
+	.section-title {
+		margin-bottom: mixins.toEm(104px, variables.$section-title-font-size);
+	}
+
+	.section-carousel-item {
+		background-color: variables.$color-white;
+	}
+
+	.embla-btn-prev {
+		background-color: variables.$color-white;
+
+		&:hover {
+			background-color: variables.$color-gray-200;
+		}
+
+		&:active {
+			background-color: variables.$color-gray-100;
+		}
+	}
+}

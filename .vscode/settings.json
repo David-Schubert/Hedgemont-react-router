@@ -1,0 +1,31 @@
+{
+  "terminal.integrated.allowChords": false,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.closeEmptyGroups": false,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.sideBar.location": "left",
+  "css.lint.unknownProperties": "ignore",
+  "css.lint.unknownAtRules": "ignore",
+  "workbench.statusBar.visible": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.showSlider": "always",
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false
+}

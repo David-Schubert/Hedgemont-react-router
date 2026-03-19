@@ -1,0 +1,45 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+section {
+	min-height: 100vh;
+	padding: mixins.fluid(variables.$section-min-padding-y, variables.$section-padding-y) 0;
+}
+
+.section-title {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	line-height: variables.$section-title-line-height;
+	font-size: mixins.fluid(
+		variables.$section-title-min-font-size,
+		variables.$section-title-font-size
+	);
+	color: variables.$color-gray-200;
+	overflow-wrap: anywhere;
+
+	.embla-controls {
+		margin-top: 0.16em;
+
+		@media (max-width: 575px) {
+			flex-basis: 100%;
+			justify-content: start;
+			margin-top: 32px;
+		}
+	}
+}
+
+.section-carousel-item {
+	padding: mixins.fluid(40, 88);
+	background-color: variables.$color-gray-200;
+
+	p {
+		font-size: mixins.fluid(16, 20);
+		line-height: 1.5;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

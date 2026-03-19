@@ -1,0 +1,24 @@
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+.btn {
+	border: 0;
+	padding: 25px 35px;
+	text-decoration: none;
+	font-weight: variables.$font-weight-bold;
+	cursor: pointer;
+	@include mixins.transition(background-color);
+}
+
+.btn-primary {
+	background-color: variables.$color-primary-500;
+	color: variables.$color-white;
+
+	&:hover {
+		background-color: variables.$color-primary-600;
+	}
+
+	&:active {
+		background-color: variables.$color-primary-700;
+	}
+}

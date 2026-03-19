@@ -1,0 +1,8 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.section-partners {
+	.section-title {
+		margin-bottom: mixins.toEm(104px, variables.$section-title-font-size);
+	}
+}

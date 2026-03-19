@@ -1,0 +1,31 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+$background-size: 860px;
+
+.section-our-values {
+	overflow-x: clip;
+
+	.section-title {
+		position: relative;
+		margin-bottom: mixins.toEm(100px, variables.$section-title-font-size);
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 100%;
+			display: block;
+			width: mixins.toEm($background-size, variables.$section-title-font-size);
+			height: mixins.toEm($background-size, variables.$section-title-font-size);
+			background-image: url(/images/ellipses.svg);
+			background-color: transparent;
+			background-size: cover;
+			background-repeat: no-repeat;
+			transform: translate(-33%, -50%);
+			transform-origin: 50% 50%;
+			animation: spin 360s linear infinite;
+			will-change: transform;
+		}
+	}
+}

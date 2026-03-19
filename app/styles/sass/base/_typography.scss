@@ -1,0 +1,103 @@
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: variables.$font-size-root;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: variables.$font-family-text;
+	font-size: 1rem;
+	font-weight: variables.$font-weight-light;
+	line-height: variables.$line-height;
+	color: variables.$color-base;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, table, img {
+	margin-top: 0;
+}
+
+p, ul, ol, dl, table, img {
+	margin-bottom: 40px;
+}
+
+h1, h2 {
+	font-family: variables.$font-family-titles;
+}
+
+h1 {
+	line-height: 0.64;
+	font-size: mixins.fluid(32, 64);
+}
+
+h2 {
+	margin-bottom: 0.74em;
+	line-height: 1.19;
+	font-size: mixins.fluid(30, 54);
+}
+
+h3 {
+	margin-bottom: 0.66em;
+	line-height: 1.25;
+	font-size: mixins.fluid(18, 24);
+}
+
+table {
+	border-collapse: collapse;
+
+	th, td {
+		vertical-align: top;
+		padding: 25px 35px;
+		background: none;
+		border: 1px solid variables.$color-gray-200;
+		text-align: left;
+
+		&[align=right]{
+			text-align: right;
+		}
+
+		&[align=center] {
+			text-align: center;
+		}
+	}
+
+
+	th {
+		background-color: variables.$color-gray-100;
+		border-color: variables.$color-gray-200;
+		color: variables.$color-base;
+		font-weight: variables.$font-weight-bold;
+	}
+}
+
+hr {
+	border: none;
+	border-top: 1px solid variables.$color-gray-100;
+	margin: 64px 0;
+}
+
+a {
+	color: variables.$color-primary-500;
+	@include mixins.transition(color);
+}
+
+a:hover {
+	color: variables.$color-primary-600;
+	text-decoration: none;
+}
+
+a:active {
+	color: variables.$color-primary-700;
+}
+
+b, strong {
+	font-weight: variables.$font-weight-bold;
+}
+

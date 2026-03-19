@@ -1,0 +1,108 @@
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+form {
+	padding: mixins.fluid(40, 88);
+	background-color: variables.$color-gray-100;
+	border-bottom-right-radius: variables.$border-radius;
+}
+
+label {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-weight: 700;
+	line-height: 1.88;
+	margin-bottom: 8px;
+
+	.label-note {
+		margin-left: auto;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 12px;
+		line-height: 1;
+	}
+}
+
+input,
+textarea {
+	display: block;
+	width: 100%;
+	padding: 25px 35px;
+	background-color: variables.$color-white;
+	border: 0;
+	outline: 1px solid transparent;
+	font-weight: variables.$font-weight-bold;
+	@include mixins.transition(background-color, outline);
+
+	&:hover {
+		outline-color: rgba(variables.$color-base, 0.25);
+	}
+
+	&:focus {
+		outline-color: variables.$color-base;
+	}
+}
+
+input,
+textarea {
+	height: 72px;
+	margin-bottom: 32px;
+}
+
+textarea {
+	min-height: 168px;
+	line-height: 1.25;
+	font-weight: variables.$font-weight-light;
+}
+
+label:has(input[type='checkbox']) {
+	display: block;
+	margin-bottom: 32px;
+	padding-left: (variables.$form-checkbox-width + variables.$form-checkbox-gap);
+	line-height: variables.$form-checkbox-line-height;
+	font-size: variables.$form-checkbox-font-size;
+	font-weight: variables.$font-weight-light;
+	cursor: pointer;
+
+	&:hover:not(.disabled) {
+		color: var(--te-color-gray-700);
+
+		input:not(:checked) {
+			border-color: var(--te-color-gray-700);
+		}
+	}
+
+	&.disabled,
+	&.disabled input {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	input {
+		float: left;
+		flex-shrink: 0;
+		width: variables.$form-checkbox-width;
+		height: variables.$form-checkbox-width;
+		border: 0;
+		margin-top: (variables.$form-checkbox-line-height - variables.$form-checkbox-width) * 0.5;
+		margin-left: (variables.$form-checkbox-width + variables.$form-checkbox-gap) * -1;
+		vertical-align: top;
+		appearance: none;
+		background-color: variables.$color-white;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		cursor: pointer;
+		outline: 0;
+
+		&:checked {
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+			background-color: variables.$color-primary-500;
+		}
+	}
+
+	a {
+		color: variables.$color-base;
+	}
+}

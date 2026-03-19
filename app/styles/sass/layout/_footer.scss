@@ -1,0 +1,26 @@
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+footer {
+	padding: mixins.fluid(variables.$footer-top-min-padding, variables.$footer-top-padding) 0
+		mixins.fluid(32, 146) 0;
+	background-color: variables.$color-base;
+	color: variables.$color-gray-100;
+	font-size: mixins.fluid(12, 14);
+
+	p {
+		opacity: 0.5;
+		line-height: 1.71;
+		margin: mixins.fluid(18, 24) 0;
+	}
+}
+
+.footer-logo {
+	width: 200px;
+
+	img {
+		display: block;
+		max-width: 100%;
+		margin-bottom: 0;
+	}
+}

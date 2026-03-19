@@ -1,0 +1,91 @@
+@use '../modules/mixins' as mixins;
+@use '../modules/variables' as variables;
+
+.list-numbered {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+	counter-reset: list-numbered-counter;
+
+	li {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 32px;
+		padding-left: 43px;
+		counter-increment: list-numbered-counter;
+		line-height: 1.16;
+		font-family: variables.$font-family-titles;
+		font-size: mixins.fluid(32, 64);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		span {
+			display: block;
+			line-height: normal;
+			font-size: mixins.fluid(18, 24);
+			font-family: variables.$font-family-text;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 80px;
+			content: '0' counter(list-numbered-counter);
+			color: variables.$color-primary;
+			font-size: 24px;
+		}
+	}
+}
+
+$list-circle-width: 192;
+$list-circle-min-width: 100;
+$list-circle-gap: 40;
+
+$list-circle-min-padding: $list-circle-min-width + $list-circle-gap * 0.5;
+$list-circle-padding: $list-circle-width + $list-circle-gap;
+
+.list-numbered-circle {
+	> li {
+		min-height: 192px;
+		margin-bottom: 40px;
+		padding-left: mixins.fluid($list-circle-min-padding, $list-circle-padding);
+		line-height: 1.18;
+		font-size: mixins.fluid(30, 54);
+		opacity: 0.1;
+		@include mixins.transition(opacity);
+
+		&::before {
+			left: 0;
+			width: mixins.fluid($list-circle-min-width, $list-circle-width);
+			height: mixins.fluid($list-circle-min-width, $list-circle-width);
+			background-color: variables.$color-base;
+			border-radius: 50%;
+			font-size: mixins.fluid(48, 80);
+			color: variables.$color-white;
+		}
+	}
+
+	> li.active {
+		opacity: 1;
+
+		&::before {
+			background-color: variables.$color-primary-500;
+		}
+	}
+
+	> li.active + li {
+		opacity: 0.3;
+	}
+
+	> li:has(+ li.active) {
+		opacity: 0.3;
+	}
+}

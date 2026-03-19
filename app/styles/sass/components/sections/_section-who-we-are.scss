@@ -1,0 +1,130 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.section-wwa {
+	.section-title {
+		margin-bottom: mixins.toEm(28px, variables.$section-title-font-size) * -1
+	}
+
+	h2 {
+		display: flex;
+		align-items: baseline;
+		gap: 32px;
+
+		span {
+			font-family: "DM Sans", serif;
+			font-size: mixins.fluid(14, 16);
+			font-weight: 500;
+		}
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin: mixins.fluid(14, 16) 0;
+		line-height: normal;
+		font-size: mixins.fluid(18, 24);
+	}
+}
+
+.section-wwa-item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: mixins.fluid(40, 94);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.section-wwa-item-text {
+	flex: 0 0 100%;
+
+	@media(min-width: 768px) {
+		flex: 0 0 70%;
+	}
+
+	@media(min-width: 1201px) {
+		flex: 0 0 50%;
+	}
+}
+
+.section-wwa-item-img {
+	display: none;
+	flex: 0 0 30%;
+
+	@media(min-width: 768px) {
+		flex: 0 0 30%;
+		display: block;
+	}
+
+	@media(min-width: 1201px) {
+		flex: 0 0 30%;
+	}
+}
+
+.section-wwa-item-logo {
+	flex: 0 0 20%;
+	display: none;
+
+	@media (min-width: 1201px) {
+		display: block;
+	}
+}
+
+.section-wwa-item-img {
+	width: 100%;
+
+	.section-wwa-item-img-wrap {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			display: block;
+			border-radius: 50%;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			margin: 0;
+			border-bottom-right-radius: variables.$border-radius;
+		}
+	}
+
+	&.section-wwa-item-img-circle {
+		.section-wwa-item-img-wrap {
+			width: 80%;
+			margin-left: auto;
+
+			&::before {
+				top: 0;
+				width: 60px;
+				height: 60px;
+				border: 3px solid variables.$color-primary;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	&.section-wwa-item-img-disc {
+		.section-wwa-item-img-wrap {
+			width: 80%;
+			margin-right: auto;
+
+			&::before {
+				bottom: 0;
+				width: 32px;
+				height: 32px;
+				background-color: variables.$color-primary-500;
+				transform: translate(-50%, 50%);
+			}
+		}
+	}
+}

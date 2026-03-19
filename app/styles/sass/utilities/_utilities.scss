@@ -1,0 +1,30 @@
+@use '../modules/mixins' as mixins;
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+.font-size-20 {
+	font-size: mixins.fluid(16, 20);
+	line-height: 1.5;
+}
+
+.font-size-16 {
+	font-size: mixins.fluid(14, 16);
+	line-height: 1.88;
+}
+
+.font-size-14 {
+	font-size: mixins.fluid(13, 14);
+	line-height: 2.14;
+}
+
+@keyframes spin {
+	from {
+		transform: translate(-33%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-33%, -50%) rotate(360deg);
+	}
+}

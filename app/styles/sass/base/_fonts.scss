@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'DMSerifDisplay';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local('DM Serif Display'),
+		url('/fonts/dm-serif-display-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'DM Sans';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		local('DM Sans Light'),
+		url('/fonts/dm-sans-light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'DM Sans';
+	font-style: normal;
+	font-weight: 500;
+	src:
+		local('DM Sans Medium'),
+		url('/fonts/dm-sans-medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'DM Sans';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		local('DM Sans Bold'),
+		url('/fonts/dm-sans-bold.woff2') format('woff2');
+}

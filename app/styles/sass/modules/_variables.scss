@@ -1,0 +1,61 @@
+@use "sass:color";
+
+// text
+$line-height:                   1.5;
+$font-size-root:                16px;
+$font-family-titles:            'DMSerifDisplay', serif;
+$font-family-text:              'DM Sans', serif;
+$font-weight-light:             300;
+$font-weight-normal:            500;
+$font-weight-bold:              700;
+
+// colors
+$color-white:                   #ffffff;
+
+$color-base:                    #000014;
+$color-primary:                 #ff2c3d;
+
+$color-primary-500:             $color-primary;
+$color-primary-600:             color.scale($color-primary-500, $lightness: -10%);
+$color-primary-700:             color.scale($color-primary-500, $lightness: -20%);
+
+$color-gray-100:                #e1e8e8;
+$color-gray-200:                #f1f3f3;
+
+// grid
+$grid-v-gutters:                15px;
+$grid-cols-count:               10;
+
+// border-radius
+$border-radius:                 25px;
+
+// forms
+$form-checkbox-min-height:      28px;
+$form-checkbox-width:           28px;
+$form-checkbox-gap:             16px;
+$form-checkbox-font-size:       16px;
+$form-checkbox-line-height:     30px;
+
+// layout
+$header-mobile-height:          94px;
+
+$container-padding-x:           80px;
+$container-narrow-padding-x:    48px;
+$container-min-padding-x:       32px;
+
+$section-padding-y:             120px;
+$section-min-padding-y:         40px;
+
+$section-title-font-size:       220px;
+$section-title-min-font-size:   80px;
+$section-title-line-height:     0.64;
+
+$section-contact-shift:         80;
+$section-contact-min-shift:     16;
+
+$footer-top-padding:            184;
+$footer-top-min-padding:        48;
+
+// effects
+$transition-duration:           0.15s;
+$transition-function:           ease-in-out;

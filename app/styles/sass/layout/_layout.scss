@@ -1,0 +1,18 @@
+@use '../modules/variables' as variables;
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: variables.$header-mobile-height;
+}
+
+header {
+	z-index: 3;
+}
+
+main {
+	z-index: 2;
+}
+
+footer {
+	z-index: 1;
+}

@@ -1,0 +1,70 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+@import 'bootstrap/scss/functions';
+
+$grid-gutter-width: variables.$grid-v-gutters;
+$grid-columns: variables.$grid-cols-count;
+$container-padding-h: variables.$container-padding-x;
+$container-narrow-padding-h: variables.$container-narrow-padding-x + variables.$container-padding-x;
+$container-min-padding-h: variables.$container-min-padding-x;
+
+$container-full-right-offset: $container-padding-h * 2;
+
+$container-max-widths: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1280px,
+	xxl: 1440px,
+);
+
+$container-full-right-narrow-max-widths: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1280px,
+);
+
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/utilities/api';
+
+.container-fluid {
+	@include make-container(0);
+	max-width: map.get($container-max-widths, xxl);
+	padding-right: mixins.fluid($container-min-padding-h, $container-padding-h);
+	padding-left: mixins.fluid($container-min-padding-h, $container-padding-h);
+}
+
+.container-fluid-narrow {
+	@include make-container(0);
+	max-width: map.get($container-max-widths, xxl);
+	padding-right: mixins.fluid($container-min-padding-h, $container-narrow-padding-h);
+	padding-left: mixins.fluid($container-min-padding-h, $container-narrow-padding-h);
+}
+
+.container-full-right {
+	@each $breakpoint, $width in $container-full-right-narrow-max-widths {
+		@include media-breakpoint-up($breakpoint) {
+			max-width: $width + $container-full-right-offset;
+			margin-right: auto;
+			margin-left: auto;
+			padding-right: $container-padding-h;
+			padding-left: $container-padding-h;
+		}
+	}
+
+	@media (min-width: map.get($container-max-widths, xxl)) {
+		max-width: calc(100vw - (100vw - map.get($container-max-widths, xxl) + $container-full-right-offset) / 2);
+		margin-right: 0;
+		margin-left: calc((100vw - map.get($container-max-widths, xxl) + $container-full-right-offset) / 2);
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

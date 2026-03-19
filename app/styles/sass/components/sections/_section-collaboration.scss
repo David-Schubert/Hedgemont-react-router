@@ -1,0 +1,8 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.section-collaboration {
+	.section-title {
+		margin-bottom: mixins.toEm(128px, variables.$section-title-font-size);
+	}
+}

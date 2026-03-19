@@ -1,0 +1,51 @@
+@use 'sass:math';
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+$background-image-top-position: (
+	variables.$section-padding-y +
+		math.div((variables.$section-title-font-size * variables.$section-title-line-height), 2) *
+		1.25
+);
+$background-image-min-top-position: (
+	variables.$section-min-padding-y +
+		math.div(
+			(variables.$section-title-min-font-size * variables.$section-title-line-height),
+			2
+		) *
+		1.25
+);
+
+.section-contact {
+	padding-bottom: 0;
+	margin-bottom: mixins.fluid(
+		variables.$section-contact-min-shift * -1,
+		variables.$section-contact-shift * -1
+	);
+	background-image: url('/images/contact.jpg');
+	background-repeat: no-repeat;
+	background-position: 50vw
+		#{mixins.fluid($background-image-min-top-position, $background-image-top-position)};
+	background-size: contain;
+
+	.section-title {
+		margin-bottom: mixins.toEm(78px, variables.$section-title-font-size);
+		color: variables.$color-base;
+	}
+
+	@media (max-width: 575px) {
+		background-image: none;
+	}
+}
+
+.section-contacts {
+	padding-top: 10px;
+}
+
+.section-contacts-item {
+	margin-top: mixins.fluid(40px, 80px);
+
+	&:last-child {
+		margin-bottom: mixins.fluid(40px, 80px);
+	}
+}

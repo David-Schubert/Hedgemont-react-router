@@ -1,0 +1,49 @@
+@use 'sass:list';
+@use 'sass:math';
+@use "sass:meta";
+@use 'variables' as variables;
+
+@function strip-unit($number) {
+	@if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+		@return math.div($number, ($number * 0 + 1));
+	}
+
+	@return $number;
+}
+
+@function fluid($from, $to, $vw-min: 576, $vw-max: 1440) {
+	$from: strip-unit($from);
+	$to: strip-unit($to);
+
+	$min-val: min($from, $to);
+	$max-val: max($from, $to);
+
+	$m: math.div($to - $from, $vw-max - $vw-min);
+	$b: $from - $m * $vw-min;
+
+	@return clamp(#{$min-val}px, #{$m * 100}vi + #{$b}px, #{$max-val}px);
+}
+
+@function toEm($size, $this-fontsize: variables.$font-size-root) {
+	@return math.div($size, $this-fontsize) * 1em;
+}
+
+@mixin transition($properties...) {
+	$props: $properties;
+
+	@if list.length($properties) == 0 {
+		$props: (all);
+	}
+
+	$transitions: ();
+
+	@each $property in $props {
+		$transitions: list.append(
+			$transitions,
+			#{$property} variables.$transition-duration variables.$transition-function,
+			comma
+		);
+	}
+
+	transition: $transitions;
+}

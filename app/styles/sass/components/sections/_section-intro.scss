@@ -1,0 +1,90 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.section-intro {
+	.section-title {
+		margin-bottom: mixins.toEm(64px, 120px);
+		color: variables.$color-base;
+		line-height: 1.08;
+		font-size: mixins.fluid(64, 120);
+	}
+}
+
+.section-intro-top {
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url('/images/hedgemont-intro.svg');
+	background-position: calc(
+			50vw - #{variables.$container-padding-x + variables.$container-narrow-padding-x}
+		)
+		50%;
+	background-repeat: no-repeat;
+
+	@media (max-width: 768px) {
+		background-size: cover;
+	}
+}
+
+.section-intro-people {
+	display: flex;
+	align-items: center;
+	line-height: normal;
+	font-weight: variables.$font-weight-normal;
+
+	img {
+		display: block;
+		width: 74px;
+		height: 74px;
+		margin: 0;
+		border: 5px solid variables.$color-white;
+		border-radius: 50%;
+
+		+ img {
+			margin-left: -14px;
+		}
+
+		&:last-of-type {
+			margin-right: 11px;
+		}
+	}
+
+	a {
+		display: block;
+		font-weight: variables.$font-weight-bold;
+	}
+}
+
+.section-intro-bottom {
+	@media (max-width: 575px) {
+		.container-fluid {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		.row {
+			margin-right: 0;
+			margin-left: 0;
+		}
+
+		.col-10 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.section-intro-box {
+	padding: mixins.fluid(48, 80) mixins.fluid(32, 168) mixins.fluid(48, 120) mixins.fluid(32, 168);
+	background-color: variables.$color-gray-100;
+	font-size: mixins.fluid(16, 20);
+
+	p:first-of-type {
+		line-height: normal;
+		font-size: mixins.fluid(24, 40);
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}

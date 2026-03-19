@@ -1,0 +1,87 @@
+@use "sass:color";
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+.embla {
+	overflow: hidden;
+}
+
+.embla {
+	max-width: 100%;
+	margin: auto;
+}
+
+.embla-container {
+	display: flex;
+	margin-left: -24px;
+	touch-action: pan-y pinch-zoom;
+}
+
+.embla-controls {
+	display: flex;
+	justify-content: end;
+	gap: 16px;
+}
+
+.embla-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 68px;
+	height: 68px;
+	padding: 0;
+	background-color: variables.$color-gray-200;
+	border: 0;
+	color: variables.$color-base;
+	font-size: 24px;
+	cursor: pointer;
+	@include mixins.transition(background-color);
+
+	svg {
+		fill: currentColor;
+	}
+}
+
+.embla-btn-prev {
+	border-bottom-left-radius: variables.$border-radius;
+
+	&:hover {
+		background-color: color.scale(variables.$color-gray-200, $lightness: -10%);
+	}
+
+	&:active {
+		background-color: color.scale(variables.$color-gray-200, $lightness: -20%);
+	}
+}
+
+.embla-btn-next {
+	background-color: variables.$color-primary-500;
+	border-bottom-right-radius: variables.$border-radius;
+	color: variables.$color-white;
+
+	&:hover {
+		background-color: variables.$color-primary-600;
+	}
+
+	&:active {
+		background-color: variables.$color-primary-700;
+	}
+}
+
+.embla-item {
+	min-width: 0;
+	flex: 0 0 100%;
+	padding-left: 24px;
+}
+
+@media (min-width: 768px) {
+	.embla-item {
+		flex: 0 0 calc(50%);
+	}
+}
+
+@media (min-width: 1400px) {
+	.embla-item {
+		flex: 0 0 583px;
+	}
+}
