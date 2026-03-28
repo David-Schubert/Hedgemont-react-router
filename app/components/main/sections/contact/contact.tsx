@@ -1,4 +1,66 @@
+import { useState } from 'react';
+
+type FormFields = {
+	name: string;
+	email: string;
+	phone: string;
+	message: string;
+	consent: boolean;
+};
+
+type FormErrors = Partial<Record<keyof FormFields, string>>;
+
+function validate(fields: FormFields): FormErrors {
+	const errors: FormErrors = {};
+	if (!fields.name.trim()) errors.name = 'error';
+	if (!fields.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) errors.email = 'error';
+	if (!fields.consent) errors.consent = 'error';
+	return errors;
+}
+
 export function Contact() {
+	const [fields, setFields] = useState<FormFields>({
+		name: '',
+		email: '',
+		phone: '',
+		message: '',
+		consent: false,
+	});
+
+	const [errors, setErrors] = useState<FormErrors>({});
+	const [touched, setTouched] = useState<Partial<Record<keyof FormFields, boolean>>>({});
+
+	const isValid = Object.keys(validate(fields)).length === 0;
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { id, value, type, required } = e.target;
+		const val = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+
+		setFields(prev => ({ ...prev, [id]: val }));
+
+		if (required && touched[id as keyof FormFields]) {
+			setErrors(validate({ ...fields, [id]: val }));
+		}
+	};
+
+	const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { id, required } = e.target;
+		if (!required) return;
+		setTouched(prev => ({ ...prev, [id]: true }));
+		setErrors(validate(fields));
+	};
+
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		setTouched({ name: true, email: true, consent: true });
+		const errs = validate(fields);
+		setErrors(errs);
+		if (Object.keys(errs).length > 0) return;
+
+		// sent formulář
+		console.log('Odesláno:', fields);
+	};
+
 	return (
 		<section id="kontakt" className="section-contact">
 			<div className="container-fluid-narrow">
@@ -67,14 +129,27 @@ export function Contact() {
 					</div>
 
 					<div className="col-xxl-5 col-xl-6 col-lg-6">
-						<form action="">
+						<form onSubmit={handleSubmit} noValidate>
 							<div>
-								<label htmlFor="name">Vaše celé jméno</label>
-								<input id="name" type="text" />
+								<label htmlFor="name" className={errors.name && touched.name ? 'error' : ''}>Vaše celé jméno</label>
+								<input
+									id="name"
+									className={errors.name && touched.name ? 'error' : ''}
+									type="text"
+									value={fields.name}
+									onChange={handleChange}
+									onBlur={handleBlur}/>
 							</div>
 							<div>
-								<label htmlFor="email">E-mail</label>
-								<input id="email" type="text" />
+								<label htmlFor="email" className={errors.email && touched.email ? 'error' : ''}>E-mail</label>
+								<input
+									id="email"
+									className={errors.email && touched.email ? 'error' : ''}
+									type="text"
+									value={fields.email}
+									onChange={handleChange}
+									onBlur={handleBlur}
+								/>
 							</div>
 							<div>
 								<label htmlFor="phone">
@@ -89,11 +164,14 @@ export function Contact() {
 								<textarea id="message" cols={30} rows={10}></textarea>
 							</div>
 							<div>
-								<label htmlFor="consent">
-									<input id="consent" type="checkbox" />
-									<span>
-										Souhlasím se <a href="#">zpracováním os. údajů</a>
-									</span>
+								<label htmlFor="consent" className={errors.consent && touched.consent ? 'error' : ''}>
+									<input
+										id="consent"
+										className={errors.consent && touched.consent ? 'error' : ''}
+										type="checkbox"
+										checked={fields.consent}
+										onChange={handleChange}/>
+									<span>Souhlasím se <a href="#">zpracováním os. údajů</a></span>
 								</label>
 							</div>
 							<div>

@@ -5,6 +5,7 @@
 	border: 0;
 	padding: 25px 35px;
 	text-decoration: none;
+	font-size: mixins.fluid(14, 16);
 	font-weight: variables.$font-weight-bold;
 	cursor: pointer;
 	@include mixins.transition(background-color);

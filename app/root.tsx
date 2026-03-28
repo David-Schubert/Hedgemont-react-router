@@ -1,3 +1,5 @@
+import { Header } from "~/components/header/header";
+import { Footer } from "~/components/footer/footer";
 import {
   isRouteErrorResponse,
   Links,
@@ -33,7 +35,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <Header />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

@@ -22,6 +22,10 @@ label {
 		font-size: 12px;
 		line-height: 1;
 	}
+
+	&.error {
+		color: #ff0000;
+	}
 }
 
 input,
@@ -48,6 +52,11 @@ input,
 textarea {
 	height: 72px;
 	margin-bottom: 32px;
+
+	&.error {
+		background-color: rgba(255, 0, 0, 0.05);
+		outline-color: #ff0000;
+	}
 }
 
 textarea {
@@ -87,6 +96,7 @@ label:has(input[type='checkbox']) {
 		border: 0;
 		margin-top: (variables.$form-checkbox-line-height - variables.$form-checkbox-width) * 0.5;
 		margin-left: (variables.$form-checkbox-width + variables.$form-checkbox-gap) * -1;
+		padding: 0;
 		vertical-align: top;
 		appearance: none;
 		background-color: variables.$color-white;
@@ -100,9 +110,20 @@ label:has(input[type='checkbox']) {
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 			background-color: variables.$color-primary-500;
 		}
+
+		&.error {
+			border: 1px solid #ff0000;
+			background-color: rgba(255, 0, 0, 0.05);
+		}
 	}
 
 	a {
 		color: variables.$color-base;
+	}
+
+	&.error {
+		a {
+			color: inherit;
+		}
 	}
 }

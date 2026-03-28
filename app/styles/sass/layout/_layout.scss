@@ -5,6 +5,10 @@ html {
 	scroll-padding-top: variables.$header-mobile-height;
 }
 
+body {
+	margin: 0;
+}
+
 header {
 	z-index: 3;
 }

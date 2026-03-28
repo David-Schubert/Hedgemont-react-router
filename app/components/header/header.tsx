@@ -103,6 +103,14 @@ export function Header() {
                       Kontakt
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-item-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       href="https://identity.asora.com/account/login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_type%3Dcode%26client_id%3Dargeau.portal%26state%3DOVNjT2ZWNUN3dTB6M2FKTGRYQnZDaG1RWjRNdTJIdFVWejZGcEpPUTdDZ35X;%25252F%26redirect_uri%3Dhttps%253A%252F%252Fapp.asora.com%26scope%3Dopenid%2520profile%2520email%2520offline_access%2520tenantId%2520portal-api%2520role%2520IdentityServerApi%26code_challenge%3DKyj8-FjL7YyK3MjYFQyTH4W74bV8B8pSLChXi0NuKwM%26code_challenge_method%3DS256%26nonce%3DOVNjT2ZWNUN3dTB6M2FKTGRYQnZDaG1RWjRNdTJIdFVWejZGcEpPUTdDZ35X">
+                      Portál
+                    </a>
+                  </li>
                 </ul>
               </nav>
             </div>
