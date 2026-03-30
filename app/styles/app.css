@@ -118,11 +118,42 @@ b, strong {
 }
 
 form {
+  position: relative;
   padding: clamp(40px, 5.5555555556vi + 8px, 88px);
   background-color: #e1e8e8;
   border-bottom-right-radius: 25px;
 }
 
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(225, 232, 232, 0.75);
+}
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 5px solid rgba(255, 44, 61, 0.25);
+  border-top-color: #ff2c3d;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 label {
   display: flex;
   align-items: center;
@@ -229,6 +260,22 @@ label:has(input[type=checkbox]) a {
 }
 label:has(input[type=checkbox]).error a {
   color: inherit;
+}
+
+.form-status {
+  margin-top: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.form-status-success {
+  color: green;
+}
+
+.form-status-error {
+  color: red;
 }
 
 .container,
@@ -6662,6 +6709,9 @@ section {
 }
 .section-contacts-item:last-child {
   margin-bottom: clamp(40px, 4.6296296296vi + 13.3333333333px, 80px);
+}
+.section-contacts-item a {
+  color: #000014;
 }
 
 .list-numbered {

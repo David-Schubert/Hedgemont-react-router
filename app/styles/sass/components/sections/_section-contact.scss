@@ -48,4 +48,8 @@ $background-image-min-top-position: (
 	&:last-child {
 		margin-bottom: mixins.fluid(40px, 80px);
 	}
+
+	a {
+		color: variables.$color-base;
+	}
 }

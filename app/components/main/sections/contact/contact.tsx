@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 type FormFields = {
 	name: string;
@@ -27,20 +28,23 @@ export function Contact() {
 		consent: false,
 	});
 
+	const [botField, setBotField] = useState('');
 	const [errors, setErrors] = useState<FormErrors>({});
 	const [touched, setTouched] = useState<Partial<Record<keyof FormFields, boolean>>>({});
-
-	const isValid = Object.keys(validate(fields)).length === 0;
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { id, value, type, required } = e.target;
-		const val = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+		const { id, value, type } = e.target;
+		const val = type === 'checkbox'
+			? (e.target as HTMLInputElement).checked
+			: value;
 
-		setFields(prev => ({ ...prev, [id]: val }));
+		const updatedFields = { ...fields, [id]: val };
 
-		if (required && touched[id as keyof FormFields]) {
-			setErrors(validate({ ...fields, [id]: val }));
-		}
+		setFields(updatedFields);
+
+		setErrors(validate(updatedFields));
 	};
 
 	const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -50,15 +54,50 @@ export function Contact() {
 		setErrors(validate(fields));
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+
+		if (botField) {
+			return;
+		}
+
 		setTouched({ name: true, email: true, consent: true });
+
 		const errs = validate(fields);
 		setErrors(errs);
 		if (Object.keys(errs).length > 0) return;
 
-		// sent formulář
-		console.log('Odesláno:', fields);
+		setIsSubmitting(true);
+		setSubmitStatus('idle');
+
+		try {
+			await emailjs.send(
+				'service_7ofmt29',
+				'template_y2xj57o',
+				{
+					name: fields.name,
+					email: fields.email,
+					phone: fields.phone,
+					message: fields.message,
+				},
+				'OtW_-UhieM75BA9qh'
+			);
+
+			setSubmitStatus('success');
+			setFields({
+				name: '',
+				email: '',
+				phone: '',
+				message: '',
+				consent: false,
+			});
+			setTouched({});
+		} catch (err) {
+			console.error(err);
+			setSubmitStatus('error');
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
@@ -136,6 +175,7 @@ export function Contact() {
 									id="name"
 									className={errors.name && touched.name ? 'error' : ''}
 									type="text"
+									required
 									value={fields.name}
 									onChange={handleChange}
 									onBlur={handleBlur}/>
@@ -145,7 +185,8 @@ export function Contact() {
 								<input
 									id="email"
 									className={errors.email && touched.email ? 'error' : ''}
-									type="text"
+									type="email"
+									required
 									value={fields.email}
 									onChange={handleChange}
 									onBlur={handleBlur}
@@ -155,13 +196,24 @@ export function Contact() {
 								<label htmlFor="phone">
 									Telefon <span className="label-note">nepovinné</span>
 								</label>
-								<input id="phone" type="text" />
+								<input
+									id="phone"
+									type="text"
+									value={fields.phone}
+									onChange={handleChange}
+								/>
 							</div>
 							<div>
 								<label htmlFor="message">
 									Zpráva <span className="label-note">nepovinné</span>
 								</label>
-								<textarea id="message" cols={30} rows={10}></textarea>
+								<textarea
+									id="message"
+									cols={30}
+									rows={10}
+									value={fields.message}
+									onChange={handleChange}
+								></textarea>
 							</div>
 							<div>
 								<label htmlFor="consent" className={errors.consent && touched.consent ? 'error' : ''}>
@@ -169,16 +221,44 @@ export function Contact() {
 										id="consent"
 										className={errors.consent && touched.consent ? 'error' : ''}
 										type="checkbox"
+										required
 										checked={fields.consent}
 										onChange={handleChange}/>
 									<span>Souhlasím se <a href="#">zpracováním os. údajů</a></span>
 								</label>
 							</div>
 							<div>
-								<button className="btn btn-primary" type="submit">
-									Odeslat formulář
+								<input
+									type="text"
+									name="fax"
+									value={botField}
+									tabIndex={-1}
+									onChange={(e) => setBotField(e.target.value)}
+									style={{
+										position: 'absolute',
+										left: '-9999px',
+										opacity: 0,
+										height: 0,
+										pointerEvents: 'none'
+									}}
+									autoComplete="off"
+								/>
+							</div>
+							<div>
+								<button name="submit" className="btn btn-primary" type="submit" disabled={isSubmitting}>
+									{isSubmitting ? 'Odesílám...' : 'Odeslat formulář'}
 								</button>
 							</div>
+
+							{isSubmitting ? (<div className="loading"></div>) : null}
+
+							{submitStatus === 'success' && (
+								<div className="form-status form-status-success">Zpráva byla úspěšně odeslána.</div>
+							)}
+
+							{submitStatus === 'error' && (
+								<div className="form-status form-status-error">Něco se pokazilo, zkuste to prosím znovu.</div>
+							)}
 						</form>
 					</div>
 				</div>
