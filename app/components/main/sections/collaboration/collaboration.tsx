@@ -83,22 +83,24 @@ export function Collaboration({
 			<div className="container-fluid-narrow">
 				<div className="row">
 					<div className="col-10">
-						<h1 className="section-title">Průběh spolupráce</h1>
+						<h2 className="section-title">Průběh spolupráce</h2>
 
 						<ol className="list-numbered list-numbered-circle">
 							<li
 								ref={(el) => {
 									itemRefs.current[0] = el;
 								}}
-								className={`row ${activeIndex === 0 ? activeClass : ''}`}
+								className={(activeIndex === 0) ? activeClass : ''}
 							>
-								<div className="col-xxl-5">Analýza současného stavu</div>
-								<div className="col-xxl-5">
-									<span>
-										Detailně vyhodnotíme vaše aktuální aktiva a cíle. Položíme
-										tak pevný základ pro efektivní správu a budoucí ochranu
-										vašeho rodinného bohatství.
-									</span>
+								<div className="row w-100">
+									<div className="col-xxl-5 mb-xxl-0 mb-3">Analýza současného stavu</div>
+									<div className="col-xxl-5">
+										<span>
+											Detailně vyhodnotíme vaše aktuální aktiva a cíle. Položíme
+											tak pevný základ pro efektivní správu a budoucí ochranu
+											vašeho rodinného bohatství.
+										</span>
+									</div>
 								</div>
 							</li>
 
@@ -106,15 +108,17 @@ export function Collaboration({
 								ref={(el) => {
 									itemRefs.current[1] = el;
 								}}
-								className={`row ${activeIndex === 1 ? activeClass : ''}`}
+								className={(activeIndex === 1) ? activeClass : ''}
 							>
-								<div className="col-xxl-5">Implementace strategie</div>
-								<div className="col-xxl-5">
-									<span>
-										Navržená řešení uvedeme precizně do praxe. Využíváme přitom
-										exkluzivní nástroje a prověřené postupy pro optimální
-										zhodnocení vašeho kapitálu.
-									</span>
+								<div className="row w-100">
+									<div className="col-xxl-5 mb-xxl-0 mb-3">Implementace strategie</div>
+									<div className="col-xxl-5">
+										<span>
+											Navržená řešení uvedeme precizně do praxe. Využíváme přitom
+											exkluzivní nástroje a prověřené postupy pro optimální
+											zhodnocení vašeho kapitálu.
+										</span>
+									</div>
 								</div>
 							</li>
 
@@ -122,15 +126,17 @@ export function Collaboration({
 								ref={(el) => {
 									itemRefs.current[2] = el;
 								}}
-								className={`row ${activeIndex === 2 ? activeClass : ''}`}
+								className={(activeIndex === 2) ? activeClass : ''}
 							>
-								<div className="col-xxl-5">Servis a udržování strategie</div>
-								<div className="col-xxl-5">
-									<span>
-										Vaše portfolio neustále hlídáme a adaptujeme na vývoj trhu.
-										Dlouhodobý servis a osobní přístup jsou pro nás závazkem k
-										vaší finanční stabilitě.
-									</span>
+								<div className="row w-100">
+									<div className="col-xxl-5 mb-xxl-0 mb-3">Servis a udržování strategie</div>
+									<div className="col-xxl-5">
+										<span>
+											Vaše portfolio neustále hlídáme a adaptujeme na vývoj trhu.
+											Dlouhodobý servis a osobní přístup jsou pro nás závazkem k
+											vaší finanční stabilitě.
+										</span>
+									</div>
 								</div>
 							</li>
 						</ol>

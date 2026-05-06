@@ -25,7 +25,7 @@ export function Partners() {
           <h3>Účetnictví, daně</h3>
           <h2>ORKÁN plus</h2>
           <p>
-            Účetní, daňové a ekonomické služeb jako celek na komfortní úrovni.
+            Účetní, daňové a ekonomické služby jako celek na komfortní úrovni.
             Tak, aby se naši klienti mohli plně soustředit na svoji hlavní
             výdělečnou činnost.
           </p>

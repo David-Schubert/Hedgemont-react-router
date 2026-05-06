@@ -46,16 +46,19 @@
 }
 
 $list-circle-width: 192;
-$list-circle-min-width: 100;
+$list-circle-min-width: 78;
 $list-circle-gap: 40;
 
 $list-circle-min-padding: $list-circle-min-width + $list-circle-gap * 0.5;
 $list-circle-padding: $list-circle-width + $list-circle-gap;
 
 .list-numbered-circle {
+	container-type: inline-size;
+	container-name: list-numbered-circle;
+
 	> li {
-		min-height: 192px;
-		margin-bottom: 40px;
+		min-height: mixins.fluid($list-circle-min-width, $list-circle-width);
+		margin-bottom:  mixins.fluid(24px, 40px);
 		padding-left: mixins.fluid($list-circle-min-padding, $list-circle-padding);
 		line-height: 1.18;
 		font-size: mixins.fluid(30, 54);
@@ -68,7 +71,7 @@ $list-circle-padding: $list-circle-width + $list-circle-gap;
 			height: mixins.fluid($list-circle-min-width, $list-circle-width);
 			background-color: variables.$color-base;
 			border-radius: 50%;
-			font-size: mixins.fluid(48, 80);
+			font-size: mixins.fluid(32, 80);
 			color: variables.$color-white;
 		}
 	}
@@ -87,5 +90,14 @@ $list-circle-padding: $list-circle-width + $list-circle-gap;
 
 	> li:has(+ li.active) {
 		opacity: 0.3;
+	}
+}
+
+@container list-numbered-circle (width < 480px) {
+	.list-numbered-circle{
+		> li {
+			padding-top: $list-circle-min-padding*1px;
+			padding-left: 0;
+		}
 	}
 }

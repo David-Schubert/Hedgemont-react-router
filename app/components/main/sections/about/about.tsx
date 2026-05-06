@@ -4,7 +4,7 @@ export function About() {
 			<div className="container-fluid-narrow">
 				<div className="row">
 					<div className="col-10">
-						<h1 className="section-title">Kdo jsme</h1>
+						<h2 className="section-title">Kdo jsme</h2>
 					</div>
 				</div>
 

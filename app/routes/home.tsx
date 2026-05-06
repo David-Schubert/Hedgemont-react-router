@@ -8,8 +8,8 @@ import { Contact } from "~/components/main/sections/contact/contact";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "HedgeMont – nezávislá správa majetku" },
+    { name: "description", content: "Správa a promyšlené rozložení majetku včetně mezinárodního umístění. Bez střetu zájmů, s řízením rizik, měn a pravidelným reportingem." },
   ];
 }
 

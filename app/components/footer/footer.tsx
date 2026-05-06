@@ -8,7 +8,7 @@ export function Footer() {
               <img
                 className="img-fluid"
                 src="/images/hegdemont-logo-color-white.png"
-                alt="IMG Hegemond"
+                alt="HedgeMond logo"
               />
             </div>
           </div>

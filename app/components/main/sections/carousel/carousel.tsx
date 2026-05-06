@@ -1,5 +1,3 @@
-'use client';
-
 import { type ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaOptionsType } from 'embla-carousel';
@@ -65,7 +63,7 @@ export function EmblaSectionCarousel({
 			<div className="container-fluid-narrow">
 				<div className="row">
 					<div className="col-10">
-						<h1 className="section-title">
+						<h2 className="section-title">
 							<span>{title}</span>
 
 							{showControls && (
@@ -105,7 +103,7 @@ export function EmblaSectionCarousel({
 									</button>
 								</span>
 							)}
-						</h1>
+						</h2>
 					</div>
 				</div>
 			</div>

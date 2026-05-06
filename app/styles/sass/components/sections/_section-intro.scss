@@ -50,9 +50,23 @@
 	}
 
 	a {
-		display: block;
 		font-weight: variables.$font-weight-bold;
 	}
+}
+
+.section-intro-people-icon {
+	display: inline-flex;
+	margin-right: 7px;
+	vertical-align: middle;
+}
+
+.section-intro-people-label {
+	margin-bottom: 9px;
+	text-transform: uppercase;
+	letter-spacing: 2.63px;
+	font-size: 14px;
+	font-weight: variables.$font-weight-bold;
+	line-height: normal;
 }
 
 .section-intro-bottom {

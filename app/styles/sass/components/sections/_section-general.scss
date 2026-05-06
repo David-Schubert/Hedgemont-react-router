@@ -4,6 +4,10 @@
 section {
 	min-height: 100vh;
 	padding: mixins.fluid(variables.$section-min-padding-y, variables.$section-padding-y) 0;
+
+	@media (max-width: 767px) {
+		min-height: auto;
+	}
 }
 
 .section-title {
