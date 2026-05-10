@@ -10,16 +10,18 @@ export function Partners() {
       <div className="embla-item">
         <div className="section-carousel-item">
           <img src="/images/michal-navratil.jpg" alt="Michal Navrátil" className="img-fluid" />
+          <h3>Nemovitostní projekty</h3>
           <h2>Michal Navrátil</h2>
-          <p></p>
+          <p>Investice do nemovitostních projektů, vyhodnocování investičních příležitostí a jejich management.</p>
         </div>
       </div>
 
       <div className="embla-item">
         <div className="section-carousel-item">
-          <img src="/images/deloitte.png" alt="Deloitte" className="img-fluid" />
-          <h2>Deloitte</h2>
-          <p></p>
+          <img src="/images/ludvik-juricka.jpg" alt="Ludvík Juřička" className="img-fluid" />
+          <h3>Deloitte Legal & Private Tax</h3>
+          <h2>Ludvík Juřička</h2>
+          <p>Právní a daňové poradenství při správě, ochraně a strukturování majetku.</p>
         </div>
       </div>
 
