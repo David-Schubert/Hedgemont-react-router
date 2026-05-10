@@ -9,6 +9,22 @@ export function Partners() {
     >
       <div className="embla-item">
         <div className="section-carousel-item">
+          <img src="/images/michal-navratil.jpg" alt="Michal Navrátil" className="img-fluid" />
+          <h2>Michal Navrátil</h2>
+          <p></p>
+        </div>
+      </div>
+
+      <div className="embla-item">
+        <div className="section-carousel-item">
+          <img src="/images/deloitte.png" alt="Deloitte" className="img-fluid" />
+          <h2>Deloitte</h2>
+          <p></p>
+        </div>
+      </div>
+
+      <div className="embla-item">
+        <div className="section-carousel-item">
           <img src="/images/ondrej-zemek.jpg" alt="Ondřej Zemek" className="img-fluid" />
           <h3>Právo, advokacie</h3>
           <h2>Ondřej Zemek</h2>
