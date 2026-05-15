@@ -39,6 +39,15 @@ export function Partners() {
 
       <div className="embla-item">
         <div className="section-carousel-item">
+          <img src="/images/jakub-veiner.jpg" alt="Jakub Veiner" className="img-fluid" />
+          <h3>Private Equity & M&A</h3>
+          <h2>Jakub Veiner</h2>
+          <p>M&A zkušenosti z Deloitte a Stifel Europe. Investment manager pro českou investiční skupinu spravující aktiva přes 15&nbsp;mld. EUR.</p>
+        </div>
+      </div>
+
+      <div className="embla-item">
+        <div className="section-carousel-item">
           <img src="/images/orkan-plus.png" alt="Orkán plus" className="img-fluid" />
           <h3>Účetnictví, daně</h3>
           <h2>ORKÁN plus</h2>
