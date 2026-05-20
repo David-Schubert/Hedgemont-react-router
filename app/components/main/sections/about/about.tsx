@@ -36,7 +36,7 @@ export function About() {
 								<div className="section-wwa-item-img-wrap">
 									<img
 										className="img-fluid"
-										src="/images/sedlacek-vit.jpg"
+										src="/images/vit-sedlacek.jpg"
 										alt="Vít Sedláček"
 									/>
 								</div>
@@ -55,7 +55,7 @@ export function About() {
 						<div className="section-wwa-item">
 							<div className="section-wwa-item-img section-wwa-item-img-disc">
 								<div className="section-wwa-item-img-wrap">
-									<img className="img-fluid" src="/images/izak-ales.jpg" alt="Aleš Izák" />
+									<img className="img-fluid" src="/images/ales-izak.jpg" alt="Aleš Izák" />
 								</div>
 							</div>
 							<div className="section-wwa-item-text">

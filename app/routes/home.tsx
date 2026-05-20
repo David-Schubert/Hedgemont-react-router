@@ -5,6 +5,7 @@ import { Values } from "~/components/main/sections/values/values";
 import { Services } from "~/components/main/sections/services/services";
 import { Collaboration } from "~/components/main/sections/collaboration/collaboration";
 import { Contact } from "~/components/main/sections/contact/contact";
+import {About} from "~/components/main/sections/about/about";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <About />
       <Partners />
       <Values />
       <Services />
