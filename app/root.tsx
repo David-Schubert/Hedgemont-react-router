@@ -7,18 +7,38 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteLoaderData,
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { useChangeLanguage } from "~/utils/i18n";
+import { i18next } from "~/utils/i18next.server";
 import "./styles/app.css";
 
 export const links: Route.LinksFunction = () => [
     { rel: "icon", href: "/favicon.png" },
 ];
 
+export async function loader({ request }: Route.LoaderArgs) {
+  const locale = await i18next.getLocale(request);
+  return { locale };
+}
+
+export const handle = {
+  i18n: ["common"],
+};
+
+export function useRootLoaderData() {
+  return useRouteLoaderData<typeof loader>("root");
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { locale } = useRootLoaderData() ?? { locale: "cs" };
+
+  useChangeLanguage(locale);
+
   return (
-    <html lang="cs">
+    <html lang={locale}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

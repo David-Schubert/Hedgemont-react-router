@@ -1,0 +1,15 @@
+{
+  "header": {
+    "logo-alt": "HedgeMont Investment",
+    "menu-toggle": "Otevřít menu",
+    "nav-label": "Hlavní navigace"
+  },
+  "navigation": {
+    "collaboration": "Průběh spolupráce",
+    "contact": "Kontakt",
+    "partners": "Partneři",
+    "portal": "Portál",
+    "services": "Služby",
+    "values": "Naše hodnoty"
+  }
+}
