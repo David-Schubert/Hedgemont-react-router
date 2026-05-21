@@ -47,12 +47,11 @@ export function EmblaSectionCarousel({
 	useEffect(() => {
 		if (!emblaApi) return;
 
-		emblaApi.on('init', updateControls);
 		emblaApi.on('select', updateControls);
 		emblaApi.on('reInit', updateControls);
+		updateControls();
 
 		return () => {
-			emblaApi.off('init', updateControls);
 			emblaApi.off('select', updateControls);
 			emblaApi.off('reInit', updateControls);
 		};
