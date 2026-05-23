@@ -6435,16 +6435,6 @@ section {
   }
 }
 
-.section-wwa-item-logo {
-  flex: 0 0 20%;
-  display: none;
-}
-@media (min-width: 1201px) {
-  .section-wwa-item-logo {
-    display: block;
-  }
-}
-
 .section-wwa-item-img {
   width: 100%;
 }
@@ -6485,6 +6475,16 @@ section {
   height: 32px;
   background-color: #ff2c3d;
   transform: translate(-50%, 50%);
+}
+
+.linkedin {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: clamp(16px, 0.462962963vi + 13.3333333333px, 20px);
+}
+.linkedin svg {
+  margin-right: clamp(4px, 0.2314814815vi + 2.6666666667px, 6px);
 }
 
 .section-partners .section-title {

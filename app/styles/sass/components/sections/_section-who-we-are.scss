@@ -67,15 +67,6 @@
 	}
 }
 
-.section-wwa-item-logo {
-	flex: 0 0 20%;
-	display: none;
-
-	@media (min-width: 1201px) {
-		display: block;
-	}
-}
-
 .section-wwa-item-img {
 	width: 100%;
 
@@ -126,5 +117,16 @@
 				transform: translate(-50%, 50%);
 			}
 		}
+	}
+}
+
+.linkedin {
+	display: inline-flex;
+	align-items: center;
+	font-weight: variables.$font-weight-bold;
+	font-size: mixins.fluid(16, 20);
+
+	svg {
+		margin-right: mixins.fluid(4, 6);
 	}
 }
