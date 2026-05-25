@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "~/components/language-switcher/language-switcher";
 
 const ACTIVE_CLASS = "active";
 const LOCK_CLASS = "lock-scroll";
@@ -80,6 +81,9 @@ export function Header() {
               </button>
               <nav id="primary-nav" aria-label={t("header.nav-label", "Hlavní navigace")}>
                 <ul className={`nav ${active}`} onClick={handleNavClick}>
+                  <li className="nav-item">
+                    <LanguageSwitcher />
+                  </li>
                   <li className="nav-item">
                     <a className="nav-item-link" href="#partneri">
                       {t("navigation.partners", "Partneři")}

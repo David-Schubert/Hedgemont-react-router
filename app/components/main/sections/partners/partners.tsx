@@ -1,61 +1,101 @@
+import { useTranslation } from "react-i18next";
 import { EmblaSectionCarousel } from "~/components/main/sections/carousel/carousel";
 
 export function Partners() {
+  const { t } = useTranslation();
+
   return (
     <EmblaSectionCarousel
       id="partneri"
       sectionClassName="section-partners"
-      title="Partneři"
+      title={t("partners.title")}
     >
       <div className="embla-item">
         <div className="section-carousel-item">
           <img src="/images/michal-navratil.jpg" alt="Michal Navrátil" className="img-fluid" />
-          <h3>Nemovitostní projekty</h3>
+          <h3>{t("partners.michal.role")}</h3>
           <h2>Michal Navrátil</h2>
-          <p>Investice do nemovitostních projektů, vyhodnocování investičních příležitostí a jejich management.</p>
+          <p>{t("partners.michal.description")}</p>
+          <a
+              className="linkedin"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.8 3.9H5.196C4.48 3.9 3.9 4.49 3.9 5.212v15.576c0 .723.58 1.312 1.296 1.312H20.8c.715 0 1.3-.59 1.3-1.312V5.212A1.31 1.31 0 0 0 20.8 3.9zM9.4 19.5H6.704v-8.686h2.702V19.5H9.4zm-1.348-13c.865 0 1.564.699 1.564 1.564 0 .865-.699 1.564-1.564 1.564a1.562 1.562 0 0 1-1.564-1.564c0-.865.699-1.564 1.564-1.564zm11.46 13h-2.697v-4.225c0-1.008-.02-2.303-1.402-2.303-1.405 0-1.62 1.096-1.62 2.23V19.5h-2.698v-8.686h2.587v1.187h.037c.362-.683 1.243-1.402 2.555-1.402 2.73 0 3.238 1.8 3.238 4.14V19.5z" fill="#000014"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
 
       <div className="embla-item">
         <div className="section-carousel-item">
           <img src="/images/ludvik-juricka.jpg" alt="Ludvík Juřička" className="img-fluid" />
-          <h3>Deloitte Legal & Private Tax</h3>
+          <h3>{t("partners.ludvik.role")}</h3>
           <h2>Ludvík Juřička</h2>
-          <p>Právní a daňové poradenství při správě, ochraně a strukturování majetku.</p>
+          <p>{t("partners.ludvik.description")}</p>
+          <a
+              className="linkedin"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.8 3.9H5.196C4.48 3.9 3.9 4.49 3.9 5.212v15.576c0 .723.58 1.312 1.296 1.312H20.8c.715 0 1.3-.59 1.3-1.312V5.212A1.31 1.31 0 0 0 20.8 3.9zM9.4 19.5H6.704v-8.686h2.702V19.5H9.4zm-1.348-13c.865 0 1.564.699 1.564 1.564 0 .865-.699 1.564-1.564 1.564a1.562 1.562 0 0 1-1.564-1.564c0-.865.699-1.564 1.564-1.564zm11.46 13h-2.697v-4.225c0-1.008-.02-2.303-1.402-2.303-1.405 0-1.62 1.096-1.62 2.23V19.5h-2.698v-8.686h2.587v1.187h.037c.362-.683 1.243-1.402 2.555-1.402 2.73 0 3.238 1.8 3.238 4.14V19.5z" fill="#000014"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
 
       <div className="embla-item">
         <div className="section-carousel-item">
           <img src="/images/ondrej-zemek.jpg" alt="Ondřej Zemek" className="img-fluid" />
-          <h3>Právo, advokacie</h3>
+          <h3>{t("partners.ondrej.role")}</h3>
           <h2>Ondřej Zemek</h2>
-          <p>
-            Dotáhne Váš deal, ochrání Váš byznys. Ať jde o fúze, akvizice nebo
-            startupy.
-          </p>
+          <p>{t("partners.ondrej.description")}</p>
+          <a
+              className="linkedin"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.8 3.9H5.196C4.48 3.9 3.9 4.49 3.9 5.212v15.576c0 .723.58 1.312 1.296 1.312H20.8c.715 0 1.3-.59 1.3-1.312V5.212A1.31 1.31 0 0 0 20.8 3.9zM9.4 19.5H6.704v-8.686h2.702V19.5H9.4zm-1.348-13c.865 0 1.564.699 1.564 1.564 0 .865-.699 1.564-1.564 1.564a1.562 1.562 0 0 1-1.564-1.564c0-.865.699-1.564 1.564-1.564zm11.46 13h-2.697v-4.225c0-1.008-.02-2.303-1.402-2.303-1.405 0-1.62 1.096-1.62 2.23V19.5h-2.698v-8.686h2.587v1.187h.037c.362-.683 1.243-1.402 2.555-1.402 2.73 0 3.238 1.8 3.238 4.14V19.5z" fill="#000014"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
 
       <div className="embla-item">
         <div className="section-carousel-item">
           <img src="/images/jakub-veiner.jpg" alt="Jakub Veiner" className="img-fluid" />
-          <h3>Private Equity & M&A</h3>
+          <h3>{t("partners.jakub.role")}</h3>
           <h2>Jakub Veiner</h2>
-          <p>M&A zkušenosti z Deloitte a Stifel Europe. Investment manager pro českou investiční skupinu spravující aktiva přes 15&nbsp;mld. EUR.</p>
+          <p>{t("partners.jakub.description")}</p>
+          <a
+              className="linkedin"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.8 3.9H5.196C4.48 3.9 3.9 4.49 3.9 5.212v15.576c0 .723.58 1.312 1.296 1.312H20.8c.715 0 1.3-.59 1.3-1.312V5.212A1.31 1.31 0 0 0 20.8 3.9zM9.4 19.5H6.704v-8.686h2.702V19.5H9.4zm-1.348-13c.865 0 1.564.699 1.564 1.564 0 .865-.699 1.564-1.564 1.564a1.562 1.562 0 0 1-1.564-1.564c0-.865.699-1.564 1.564-1.564zm11.46 13h-2.697v-4.225c0-1.008-.02-2.303-1.402-2.303-1.405 0-1.62 1.096-1.62 2.23V19.5h-2.698v-8.686h2.587v1.187h.037c.362-.683 1.243-1.402 2.555-1.402 2.73 0 3.238 1.8 3.238 4.14V19.5z" fill="#000014"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
 
       <div className="embla-item">
         <div className="section-carousel-item">
           <img src="/images/orkan-plus.png" alt="Orkán plus" className="img-fluid" />
-          <h3>Účetnictví, daně</h3>
+          <h3>{t("partners.orkan.role")}</h3>
           <h2>ORKÁN plus</h2>
-          <p>
-            Účetní, daňové a ekonomické služby jako celek na komfortní úrovni.
-            Tak, aby se naši klienti mohli plně soustředit na svoji hlavní
-            výdělečnou činnost.
-          </p>
+          <p>{t("partners.orkan.description")}</p>
         </div>
       </div>
     </EmblaSectionCarousel>

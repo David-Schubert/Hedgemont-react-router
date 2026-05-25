@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export function Collaboration({
 	activeClass = 'active',
@@ -9,6 +10,7 @@ export function Collaboration({
 	activeLine?: number;
 	hysteresisPx?: number;
 } = {}) {
+	const { t } = useTranslation();
 	const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
 	const [activeIndex, setActiveIndex] = useState(-1);
 
@@ -83,59 +85,41 @@ export function Collaboration({
 			<div className="container-fluid-narrow">
 				<div className="row">
 					<div className="col-10">
-						<h2 className="section-title">Průběh spolupráce</h2>
+						<h2 className="section-title">{t("collaboration.title")}</h2>
 
 						<ol className="list-numbered list-numbered-circle">
 							<li
-								ref={(el) => {
-									itemRefs.current[0] = el;
-								}}
+								ref={(el) => { itemRefs.current[0] = el; }}
 								className={(activeIndex === 0) ? activeClass : ''}
 							>
 								<div className="row w-100">
-									<div className="col-xxl-5 mb-xxl-0 mb-3">Analýza současného stavu</div>
+									<div className="col-xxl-5 mb-xxl-0 mb-3">{t("collaboration.analysis.title")}</div>
 									<div className="col-xxl-5">
-										<span>
-											Detailně vyhodnotíme vaše aktuální aktiva a cíle. Položíme
-											tak pevný základ pro efektivní správu a budoucí ochranu
-											vašeho rodinného bohatství.
-										</span>
+										<span>{t("collaboration.analysis.description")}</span>
 									</div>
 								</div>
 							</li>
 
 							<li
-								ref={(el) => {
-									itemRefs.current[1] = el;
-								}}
+								ref={(el) => { itemRefs.current[1] = el; }}
 								className={(activeIndex === 1) ? activeClass : ''}
 							>
 								<div className="row w-100">
-									<div className="col-xxl-5 mb-xxl-0 mb-3">Implementace strategie</div>
+									<div className="col-xxl-5 mb-xxl-0 mb-3">{t("collaboration.implementation.title")}</div>
 									<div className="col-xxl-5">
-										<span>
-											Navržená řešení uvedeme precizně do praxe. Využíváme přitom
-											exkluzivní nástroje a prověřené postupy pro optimální
-											zhodnocení vašeho kapitálu.
-										</span>
+										<span>{t("collaboration.implementation.description")}</span>
 									</div>
 								</div>
 							</li>
 
 							<li
-								ref={(el) => {
-									itemRefs.current[2] = el;
-								}}
+								ref={(el) => { itemRefs.current[2] = el; }}
 								className={(activeIndex === 2) ? activeClass : ''}
 							>
 								<div className="row w-100">
-									<div className="col-xxl-5 mb-xxl-0 mb-3">Servis a udržování strategie</div>
+									<div className="col-xxl-5 mb-xxl-0 mb-3">{t("collaboration.service.title")}</div>
 									<div className="col-xxl-5">
-										<span>
-											Vaše portfolio neustále hlídáme a adaptujeme na vývoj trhu.
-											Dlouhodobý servis a osobní přístup jsou pro nás závazkem k
-											vaší finanční stabilitě.
-										</span>
+										<span>{t("collaboration.service.description")}</span>
 									</div>
 								</div>
 							</li>

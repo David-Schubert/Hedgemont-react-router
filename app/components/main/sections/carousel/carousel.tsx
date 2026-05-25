@@ -1,6 +1,7 @@
 import { type ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaOptionsType } from 'embla-carousel';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
 	id: string;
@@ -17,6 +18,8 @@ export function EmblaSectionCarousel({
 	options,
 	children,
 }: Props) {
+	const { t } = useTranslation();
+
 	const emblaOptions = useMemo<EmblaOptionsType>(
 		() => ({ loop: true, align: 'start', ...options }),
 		[options],
@@ -70,7 +73,7 @@ export function EmblaSectionCarousel({
 									<button
 										className="embla-btn embla-btn-prev"
 										type="button"
-										aria-label="Předchozí"
+										aria-label={t("carousel.prev")}
 										onClick={onPrev}
 										disabled={prevDisabled}
 									>
@@ -87,7 +90,7 @@ export function EmblaSectionCarousel({
 									<button
 										className="embla-btn embla-btn-next"
 										type="button"
-										aria-label="Další"
+										aria-label={t("carousel.next")}
 										onClick={onNext}
 										disabled={nextDisabled}
 									>

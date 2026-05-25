@@ -40,17 +40,17 @@ nav {
 
 .nav {
 	display: flex;
-	gap: 32px;
+	gap: 28px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 
 	@media (min-width: 1280px) {
-		gap: 48px;
+		gap: 40px;
 	}
 
 	@media (min-width: 1400px) {
-		gap: 64px;
+		gap: 56px;
 	}
 }
 
@@ -184,6 +184,28 @@ nav {
 		&.active {
 			visibility: visible;
 			opacity: 1;
+		}
+
+		.language-switcher {
+			width: 100%;
+			margin-bottom: 8px;
+
+			img {
+				width: 32px;
+				height: 32px;
+			}
+		}
+
+		.language-switcher-toggle,
+		.language-switcher-menu,
+		.language-switcher-item button {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.language-switcher-menu {
+			position: relative;
 		}
 	}
 

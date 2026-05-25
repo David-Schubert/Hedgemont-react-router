@@ -1,4 +1,9 @@
+import { useTranslation } from "react-i18next";
+
 export function Footer() {
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
+
   return (
     <footer>
       <div className="container-fluid">
@@ -8,12 +13,12 @@ export function Footer() {
               <img
                 className="img-fluid"
                 src="/images/hegdemont-logo-color-white.png"
-                alt="HedgeMond logo"
+                alt={t("footer.logo-alt")}
               />
             </div>
           </div>
           <div className="col-xl-7 col-lg-6">
-            <p>&copy; 2026 HedgeMont Investment Všechna práva vyhrazena.</p>
+            <p>{t("footer.copyright", { year })}</p>
           </div>
         </div>
       </div>
