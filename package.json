@@ -9,6 +9,9 @@
     "dev": "npm run sass:watch & react-router dev",
     "dev-win": "concurrently \"npm run sass:watch\" \"react-router dev\"",
     "start": "react-router-serve ./build/server/index.js",
+    "messages": "i18next --config i18next-parser.config.js",
+    "messages:sync": "mkdir -p public/locales/cs/ public/locales/en/ && cp -r messages/* public/locales/cs/ && cp -r messages/* public/locales/en/",
+    "messages:extract": "npm run messages && npm run messages:sync",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -17,10 +20,16 @@
     "bootstrap": "^5.3.8",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "i18next": "^25.5.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-fs-backend": "^2.6.0",
+    "i18next-http-backend": "^3.0.2",
     "isbot": "^5.1.31",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-i18next": "^15.7.3",
     "react-router": "7.12.0",
+    "remix-i18next": "^7.3.0",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
@@ -42,6 +51,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unused-imports": "^4.4.1",
+    "i18next-parser": "^9.3.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sass-embedded": "^1.97.3",

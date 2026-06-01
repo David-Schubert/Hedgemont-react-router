@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "title": "HedgeMont – nezávislá správa majetku",
+    "description": "Správa a promyšlené rozložení majetku včetně mezinárodního umístění. Bez střetu zájmů, s řízením rizik, měn a pravidelným reportingem."
+  },
+  "header": {
+    "logo-alt": "HedgeMont Investment",
+    "menu-toggle": "Otevřít menu",
+    "nav-label": "Hlavní navigace"
+  },
+  "navigation": {
+    "collaboration": "Průběh spolupráce",
+    "contact": "Kontakt",
+    "partners": "Partneři",
+    "portal": "Portál",
+    "services": "Služby",
+    "values": "Naše hodnoty"
+  },
+  "hero": {
+    "title": "Nezávislá <br/> správa majetku",
+    "founders-label": "kdo stojí za projektem",
+    "tagline": "Bez střetu zájmů. <bold>Pro dlouhodobou ochranu a zhodnocení</bold> vašeho majetku.",
+    "description-1": "Zajišťujeme dlouhodobou správu a promyšlené rozložení majetku, včetně jeho mezinárodního umístění. Vybíráme vhodné privátní banky, vyjednáváme s nimi optimální podmínky a udržujeme přehled o všech bankovních účtech a investicích, aby bylo vaše portfolio řízeno efektivně a transparentně.",
+    "description-2": "Na základě vašich cílů připravujeme individuální investiční strategii a průběžně sledujeme rizika i měnovou expozici. Pravidelně poskytujeme srozumitelný reporting o vývoji majetku a plánujeme jeho čerpání tak, aby dlouhodobě odpovídalo vašim potřebám a záměrům."
+  },
+  "about": {
+    "title": "Kdo jsme",
+    "vit": {
+      "name": "Vít Sedláček",
+      "location": "Praha / Brno",
+      "bio-1": "Více než <bold>15 let zkušeností</bold> z Českého ale i Globálního Wealth managementu (UniCredit, Credit Suisse, UBS)",
+      "bio-2": "Certifikovaný poradce SQA (Certified Wealth Management Advisor)",
+      "bio-3": "Zaměření na mezinárodní správu majetku"
+    },
+    "ales": {
+      "name": "Aleš Izák",
+      "location": "Praha / Brno",
+      "bio-1": "Řízení segmentu UHNWI a HNWI, AMUNDI Česká Republika",
+      "bio-2": "<bold>Více než 20 let zkušeností</bold> v investicích a portfolio managementu",
+      "bio-3": "Zaměření na ETFs, asset management"
+    }
+  },
+  "partners": {
+    "title": "Partneři",
+    "michal": {
+      "role": "Nemovitostní projekty",
+      "description": "Investice do nemovitostních projektů, vyhodnocování investičních příležitostí a jejich management."
+    },
+    "ludvik": {
+      "role": "Deloitte Legal & Private Tax",
+      "description": "Právní a daňové poradenství při správě, ochraně a strukturování majetku."
+    },
+    "ondrej": {
+      "role": "Právo, advokacie",
+      "description": "Dotáhne Váš deal, ochrání Váš byznys. Ať jde o fúze, akvizice nebo startupy."
+    },
+    "jakub": {
+      "role": "Private Equity & M&A",
+      "description": "M&A zkušenosti z Deloitte a Stifel Europe. Investment manager pro českou investiční skupinu spravující aktiva přes 15 mld. EUR."
+    },
+    "orkan": {
+      "role": "Účetnictví, daně",
+      "description": "Účetní, daňové a ekonomické služby jako celek na komfortní úrovni. Tak, aby se naši klienti mohli plně soustředit na svoji hlavní výdělečnou činnost."
+    }
+  },
+  "values": {
+    "title": "Naše hodnoty",
+    "fairness": {
+      "title": "Férovost a transparentnost",
+      "tagline": "Tomu věříme."
+    },
+    "longterm": {
+      "title": "Dlouhodobá spolupráce",
+      "tagline": "Podle toho se rozhodujeme."
+    },
+    "international": {
+      "title": "Mezinárodní působnost",
+      "tagline": "To je to, čeho chceme dosáhnout."
+    }
+  },
+  "services": {
+    "title": "Služby",
+    "investment": {
+      "title": "Investiční poradenství",
+      "strategy": {
+        "title": "Definice strategie",
+        "description": "Stanovení jasných investičních cílů a pravidel, která respektují váš postoj k riziku i rodinné priority."
+      },
+      "selection": {
+        "title": "Výběr bank a investičních fondů",
+        "description": "Nezávislá prověrka a selekce nejlepších institucí a produktů na trhu, které splňují nejpřísnější kritéria výkonnosti a stability."
+      },
+      "allocation": {
+        "title": "Alokace aktiv",
+        "description": "Strategické rozložení kapitálu mezi různé třídy aktiv s cílem maximalizovat výnos při zachování vysoké míry bezpečnosti."
+      },
+      "consolidation": {
+        "title": "Konsolidace dat a servis",
+        "description": "Sjednocení informací z různých bank a účtů do jednoho přehledného celku, který umožňuje kontrolovat celkovou expozici majetku."
+      }
+    },
+    "management": {
+      "title": "Správa a ochrana majetku",
+      "trusts": {
+        "title": "Trusty, nadace",
+        "description": "Komplexní správa rodinného bohatství prostřednictvím svěřenských fondů a nadací."
+      },
+      "coordination": {
+        "title": "Koordinace",
+        "description": "Efektivní řízení všech vašich poradců a procesů pod jednou střechou."
+      },
+      "protection": {
+        "title": "Ochrana majetku",
+        "description": "Maximální bezpečí vašich aktiv díky špičkovému právnímu a daňovému servisu."
+      },
+      "consolidation": {
+        "title": "Konsolidace",
+        "description": "Dokonalý a sjednocený přehled o veškerém vašem majetku v reálném čase."
+      }
+    },
+    "heritage": {
+      "title": "Rodinné dědictví a nástupnictví",
+      "succession": {
+        "title": "Nástupnictví",
+        "description": "Zajistíme bezproblémové předání majetku na další generaci."
+      },
+      "philanthropy": {
+        "title": "Filantropie",
+        "description": "Vezmeme si na starost filantropii i založení nadací."
+      },
+      "constitution": {
+        "title": "Rodinná ústava",
+        "description": "Připravíme rodinnou ústavu a postaráme se o proces řízení."
+      },
+      "education": {
+        "title": "Vzdělávání",
+        "description": "Zařídíme vzdělání nové generace jako vašich nástupců."
+      }
+    }
+  },
+  "collaboration": {
+    "title": "Průběh spolupráce",
+    "analysis": {
+      "title": "Analýza současného stavu",
+      "description": "Detailně vyhodnotíme vaše aktuální aktiva a cíle. Položíme tak pevný základ pro efektivní správu a budoucí ochranu vašeho rodinného bohatství."
+    },
+    "implementation": {
+      "title": "Implementace strategie",
+      "description": "Navržená řešení uvedeme precizně do praxe. Využíváme přitom exkluzivní nástroje a prověřené postupy pro optimální zhodnocení vašeho kapitálu."
+    },
+    "service": {
+      "title": "Servis a udržování strategie",
+      "description": "Vaše portfolio neustále hlídáme a adaptujeme na vývoj trhu. Dlouhodobý servis a osobní přístup jsou pro nás závazkem k vaší finanční stabilitě."
+    }
+  },
+  "carousel": {
+    "prev": "Předchozí",
+    "next": "Další"
+  },
+  "footer": {
+    "logo-alt": "HedgeMont logo",
+    "copyright": "© {{year}} HedgeMont Investment. Všechna práva vyhrazena."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Napište nebo zavolejte",
+    "company": "HedgeMont s.r.o.",
+    "address-line1": "Třebohostická 3463/12a,",
+    "address-line2": "Strašnice, 100 00 Praha 10",
+    "registration": "C 430781 vedená u Městského soudu v Praze",
+    "links-title": "Odkazy",
+    "terms": "Obchodní podmínky",
+    "privacy": "Ochrana os. údajů",
+    "certificate": "Osvědčení",
+    "vat": "Registrace k DPH"
+  }
+}

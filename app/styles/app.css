@@ -6051,19 +6051,19 @@ nav {
 
 .nav {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 @media (min-width: 1280px) {
   .nav {
-    gap: 48px;
+    gap: 40px;
   }
 }
 @media (min-width: 1400px) {
   .nav {
-    gap: 64px;
+    gap: 56px;
   }
 }
 
@@ -6181,6 +6181,24 @@ nav {
     visibility: visible;
     opacity: 1;
   }
+  .nav .language-switcher {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .nav .language-switcher img {
+    width: 32px;
+    height: 32px;
+  }
+  .nav .language-switcher-toggle,
+  .nav .language-switcher-menu,
+  .nav .language-switcher-item button {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .nav .language-switcher-menu {
+    position: relative;
+  }
   .navbar-toggle {
     display: flex;
   }
@@ -6282,6 +6300,9 @@ section {
 }
 .section-carousel-item p:last-of-type {
   margin-bottom: 0;
+}
+.section-carousel-item p + .linkedin {
+  margin-top: clamp(16px, 0.462962963vi + 13.3333333333px, 20px);
 }
 
 .section-intro .section-title {
@@ -6720,6 +6741,64 @@ section {
     flex: 0 0 583px;
   }
 }
+.language-switcher {
+  position: relative;
+  align-self: center;
+  color: #ff2c3d;
+}
+.language-switcher.open .language-switcher-chevron {
+  transform: rotate(180deg);
+}
+.language-switcher img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin: 0;
+}
+
+.language-switcher-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 4px;
+  z-index: 100;
+}
+
+.language-switcher-item button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  width: 100%;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #000;
+  white-space: nowrap;
+}
+.language-switcher-item button:hover {
+  background-color: #e1e8e8;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.language-switcher-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+.language-switcher-chevron {
+  transition: transform 0.15s ease-in-out;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;

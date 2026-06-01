@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "title": "HedgeMont – Independent Asset Management",
+    "description": "Asset management and thoughtful allocation including international placement. Without conflicts of interest, with risk and currency management and regular reporting."
+  },
+  "header": {
+    "logo-alt": "HedgeMont Investment",
+    "menu-toggle": "Open menu",
+    "nav-label": "Main navigation"
+  },
+  "navigation": {
+    "collaboration": "Collaboration process",
+    "contact": "Contact",
+    "partners": "Partners",
+    "portal": "Portal",
+    "services": "Services",
+    "values": "Our values"
+  },
+  "hero": {
+    "title": "Independent <br/> Asset Management",
+    "founders-label": "who is behind the project",
+    "tagline": "Without conflicts of interest. <bold>For long-term protection and appreciation</bold> of your assets.",
+    "description-1": "We provide long-term asset management and thoughtful allocation, including international placement. We select suitable private banks, negotiate optimal terms with them, and maintain oversight of all bank accounts and investments, ensuring your portfolio is managed efficiently and transparently.",
+    "description-2": "Based on your goals, we prepare an individual investment strategy and continuously monitor risks and currency exposure. We regularly provide clear reporting on asset development and plan its drawdown to match your long-term needs and intentions."
+  },
+  "about": {
+    "title": "Who we are",
+    "vit": {
+      "name": "Vít Sedláček",
+      "location": "Prague / Brno",
+      "bio-1": "More than <bold>15 years of experience</bold> in Czech and Global Wealth Management (UniCredit, Credit Suisse, UBS)",
+      "bio-2": "SQA Certified Advisor (Certified Wealth Management Advisor)",
+      "bio-3": "Focus on international asset management"
+    },
+    "ales": {
+      "name": "Aleš Izák",
+      "location": "Prague / Brno",
+      "bio-1": "Management of UHNWI and HNWI segment, AMUNDI Czech Republic",
+      "bio-2": "<bold>More than 20 years of experience</bold> in investments and portfolio management",
+      "bio-3": "Focus on ETFs, asset management"
+    }
+  },
+  "partners": {
+    "title": "Partners",
+    "michal": {
+      "role": "Real Estate Projects",
+      "description": "Investment in real estate projects, evaluation of investment opportunities and their management."
+    },
+    "ludvik": {
+      "role": "Deloitte Legal & Private Tax",
+      "description": "Legal and tax advisory in asset management, protection and structuring."
+    },
+    "ondrej": {
+      "role": "Law, Advocacy",
+      "description": "Will close your deal, protect your business. Whether it is mergers, acquisitions or startups."
+    },
+    "jakub": {
+      "role": "Private Equity & M&A",
+      "description": "M&A experience from Deloitte and Stifel Europe. Investment manager for a Czech investment group managing assets over 15 billion EUR."
+    },
+    "orkan": {
+      "role": "Accounting, Taxes",
+      "description": "Accounting, tax and economic services as a whole at a comfortable level. So that our clients can fully focus on their main business activity."
+    }
+  },
+  "values": {
+    "title": "Our values",
+    "fairness": {
+      "title": "Fairness and transparency",
+      "tagline": "We believe in this."
+    },
+    "longterm": {
+      "title": "Long-term cooperation",
+      "tagline": "We decide accordingly."
+    },
+    "international": {
+      "title": "International presence",
+      "tagline": "That is what we want to achieve."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "investment": {
+      "title": "Investment advisory",
+      "strategy": {
+        "title": "Strategy definition",
+        "description": "Setting clear investment goals and rules that respect your risk attitude and family priorities."
+      },
+      "selection": {
+        "title": "Selection of banks and investment funds",
+        "description": "Independent review and selection of the best institutions and products on the market that meet the strictest performance and stability criteria."
+      },
+      "allocation": {
+        "title": "Asset allocation",
+        "description": "Strategic distribution of capital across different asset classes with the aim of maximizing returns while maintaining a high level of security."
+      },
+      "consolidation": {
+        "title": "Data consolidation and service",
+        "description": "Unification of information from various banks and accounts into one clear whole, enabling control of total asset exposure."
+      }
+    },
+    "management": {
+      "title": "Asset management and protection",
+      "trusts": {
+        "title": "Trusts, foundations",
+        "description": "Comprehensive management of family wealth through trust funds and foundations."
+      },
+      "coordination": {
+        "title": "Coordination",
+        "description": "Effective management of all your advisors and processes under one roof."
+      },
+      "protection": {
+        "title": "Asset protection",
+        "description": "Maximum security of your assets through top-tier legal and tax services."
+      },
+      "consolidation": {
+        "title": "Consolidation",
+        "description": "Perfect and unified overview of all your assets in real time."
+      }
+    },
+    "heritage": {
+      "title": "Family heritage and succession",
+      "succession": {
+        "title": "Succession",
+        "description": "We will ensure a smooth transfer of assets to the next generation."
+      },
+      "philanthropy": {
+        "title": "Philanthropy",
+        "description": "We will take care of philanthropy and the establishment of foundations."
+      },
+      "constitution": {
+        "title": "Family constitution",
+        "description": "We will prepare the family constitution and take care of the governance process."
+      },
+      "education": {
+        "title": "Education",
+        "description": "We will arrange the education of the next generation as your successors."
+      }
+    }
+  },
+  "collaboration": {
+    "title": "Collaboration process",
+    "analysis": {
+      "title": "Current state analysis",
+      "description": "We will thoroughly evaluate your current assets and goals, laying a solid foundation for effective management and future protection of your family wealth."
+    },
+    "implementation": {
+      "title": "Strategy implementation",
+      "description": "We will precisely put the proposed solutions into practice, using exclusive tools and proven procedures for optimal appreciation of your capital."
+    },
+    "service": {
+      "title": "Service and strategy maintenance",
+      "description": "We continuously monitor and adapt your portfolio to market developments. Long-term service and a personal approach are our commitment to your financial stability."
+    }
+  },
+  "carousel": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "footer": {
+    "logo-alt": "HedgeMont logo",
+    "copyright": "© {{year}} HedgeMont Investment. All rights reserved."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Write or call",
+    "company": "HedgeMont s.r.o.",
+    "address-line1": "Třebohostická 3463/12a,",
+    "address-line2": "Strašnice, 100 00 Praha 10",
+    "registration": "C 430781 registered at the Municipal Court in Prague",
+    "links-title": "Links",
+    "terms": "Terms and conditions",
+    "privacy": "Data protection",
+    "certificate": "Certificate",
+    "vat": "VAT registration"
+  }
+}

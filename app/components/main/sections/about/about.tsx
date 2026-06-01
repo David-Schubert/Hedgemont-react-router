@@ -1,10 +1,14 @@
+import { useTranslation, Trans } from "react-i18next";
+
 export function About() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="kdo-jsme" className="section section-wwa">
 			<div className="container-fluid-narrow">
 				<div className="row">
 					<div className="col-10">
-						<h2 className="section-title">Kdo jsme</h2>
+						<h2 className="section-title">{t("about.title")}</h2>
 					</div>
 				</div>
 
@@ -13,18 +17,14 @@ export function About() {
 						<div className="section-wwa-item">
 							<div className="section-wwa-item-text">
 								<h2>
-									Vít Sedláček <span>Praha / Brno</span>
+									{t("about.vit.name")} <span>{t("about.vit.location")}</span>
 								</h2>
 								<ul>
 									<li>
-										Více než  <b>15 let zkušeností</b> z Českého ale i Globálního Wealth managementu ( UniCredit, Credit Suisse, UBS)
+										<Trans i18nKey="about.vit.bio-1" components={{ bold: <b /> }} />
 									</li>
-									<li>
-										Certifikovaný poradce SQA (Certified Wealth Management Advisor)
-									</li>
-									<li>
-										Zaměření na mezinárodní správu majetku
-									</li>
+									<li>{t("about.vit.bio-2")}</li>
+									<li>{t("about.vit.bio-3")}</li>
 									<li>
 										<a
 											className="linkedin"
@@ -45,7 +45,7 @@ export function About() {
 									<img
 										className="img-fluid"
 										src="/images/vit-sedlacek-about.jpg"
-										alt="Vít Sedláček"
+										alt={t("about.vit.name")}
 									/>
 								</div>
 							</div>
@@ -54,23 +54,19 @@ export function About() {
 						<div className="section-wwa-item">
 							<div className="section-wwa-item-img section-wwa-item-img-disc">
 								<div className="section-wwa-item-img-wrap">
-									<img className="img-fluid" src="/images/ales-izak-about.jpg" alt="Aleš Izák" />
+									<img className="img-fluid" src="/images/ales-izak-about.jpg" alt={t("about.ales.name")} />
 								</div>
 							</div>
 							<div className="section-wwa-item-text">
 								<h2>
-									Aleš Izák <span>Praha / Brno</span>
+									{t("about.ales.name")} <span>{t("about.ales.location")}</span>
 								</h2>
 								<ul>
+									<li>{t("about.ales.bio-1")}</li>
 									<li>
-										Řízení segmentu UHNWI a HNWI,  AMUNDI Česká Republika
+										<Trans i18nKey="about.ales.bio-2" components={{ bold: <b /> }} />
 									</li>
-									<li>
-										<b>Více než 20 let zkušeností</b> v investicích a portfolio managementu
-									</li>
-									<li>
-										Zaměření na ETFs, asset management
-									</li>
+									<li>{t("about.ales.bio-3")}</li>
 									<li>
 										<a
 											className="linkedin"

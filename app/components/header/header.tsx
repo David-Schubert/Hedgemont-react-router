@@ -1,4 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "~/components/language-switcher/language-switcher";
 
 const ACTIVE_CLASS = "active";
 const LOCK_CLASS = "lock-scroll";
@@ -6,6 +8,7 @@ const LINK_SELECTOR = ".nav-item-link";
 const HEADER_SMALL_CLASS = "header-small";
 
 export function Header() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isSmall, setIsSmall] = useState(false);
 
@@ -60,14 +63,14 @@ export function Header() {
                     />
                     <img
                       src="/images/hedgemont-logo-color-black.png"
-                      alt="HedgeMont Investment"
+                      alt={t("header.logo-alt", "HedgeMont Investment")}
                     />
                   </picture>
                 </a>
               </div>
               <button
                 className={`navbar-toggle ${active}`}
-                aria-label="Otevřít menu"
+                aria-label={t("header.menu-toggle", "Otevřít menu")}
                 aria-controls="primary-nav"
                 aria-expanded={isOpen}
                 type="button"
@@ -76,31 +79,34 @@ export function Header() {
                 <div className="navbar-toggle-bar"></div>
                 <div className="navbar-toggle-bar"></div>
               </button>
-              <nav id="primary-nav" aria-label="Hlavní navigace">
+              <nav id="primary-nav" aria-label={t("header.nav-label", "Hlavní navigace")}>
                 <ul className={`nav ${active}`} onClick={handleNavClick}>
                   <li className="nav-item">
+                    <LanguageSwitcher />
+                  </li>
+                  <li className="nav-item">
                     <a className="nav-item-link" href="#partneri">
-                      Partneři
+                      {t("navigation.partners", "Partneři")}
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-item-link" href="#nase-hodnoty">
-                      Naše hodnoty
+                      {t("navigation.values", "Naše hodnoty")}
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-item-link" href="#sluzby">
-                      Služby
+                      {t("navigation.services", "Služby")}
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-item-link" href="#prubeh-spoluprace">
-                      Průběh spolupráce
+                      {t("navigation.collaboration", "Průběh spolupráce")}
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-item-link" href="#kontakt">
-                      Kontakt
+                      {t("navigation.contact", "Kontakt")}
                     </a>
                   </li>
                   <li className="nav-item">
@@ -108,7 +114,7 @@ export function Header() {
                        target="_blank"
                        rel="noopener noreferrer"
                        href="https://identity.asora.com/account/login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_type%3Dcode%26client_id%3Dargeau.portal%26state%3DOVNjT2ZWNUN3dTB6M2FKTGRYQnZDaG1RWjRNdTJIdFVWejZGcEpPUTdDZ35X;%25252F%26redirect_uri%3Dhttps%253A%252F%252Fapp.asora.com%26scope%3Dopenid%2520profile%2520email%2520offline_access%2520tenantId%2520portal-api%2520role%2520IdentityServerApi%26code_challenge%3DKyj8-FjL7YyK3MjYFQyTH4W74bV8B8pSLChXi0NuKwM%26code_challenge_method%3DS256%26nonce%3DOVNjT2ZWNUN3dTB6M2FKTGRYQnZDaG1RWjRNdTJIdFVWejZGcEpPUTdDZ35X">
-                      Portál
+                      {t("navigation.portal", "Portál")}
                     </a>
                   </li>
                 </ul>

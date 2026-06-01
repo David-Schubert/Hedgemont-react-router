@@ -1,0 +1,65 @@
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+.language-switcher {
+	position: relative;
+	align-self: center;
+	color: variables.$color-primary;
+
+	&.open {
+		.language-switcher-chevron {
+			transform: rotate(180deg);
+		}
+	}
+
+	img {
+		width: 25px;
+		height: 25px;
+		display: block;
+		margin: 0;
+	}
+}
+
+.language-switcher-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	margin-top: 4px;
+	z-index: 100;
+}
+
+.language-switcher-item button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 8px;
+	width: 100%;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #000;
+	white-space: nowrap;
+
+	&:hover {
+		background-color: variables.$color-gray-100;
+		@include mixins.transition(background-color);
+	}
+}
+
+.language-switcher-toggle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 8px;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	color: inherit;
+}
+
+.language-switcher-chevron {
+	@include mixins.transition(transform);
+}

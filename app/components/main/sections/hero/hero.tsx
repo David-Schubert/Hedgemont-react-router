@@ -1,4 +1,8 @@
+import { useTranslation, Trans } from "react-i18next";
+
 export function Hero() {
+	const { t } = useTranslation();
+
 	return (
 		<section id="intro" className="section section-intro">
 			<div className="section-intro-top">
@@ -6,8 +10,7 @@ export function Hero() {
 					<div className="row">
 						<div className="col-xxl-8 col-xl-9 col-10">
 							<h1 className="section-title">
-								Nezávislá <br />
-								správa majetku
+								<Trans i18nKey="hero.title" components={{ br: <br /> }} />
 							</h1>
 						</div>
 					</div>
@@ -17,7 +20,7 @@ export function Hero() {
 								<img src="/images/vit-sedlacek.jpg" alt="Vít Sedláček" />
 								<img src="/images/ales-izak.jpg" alt="Aleš Izák" />
 								<div>
-									<div className="section-intro-people-label">kdo stojí za&nbsp;projektem</div>
+									<div className="section-intro-people-label">{t("hero.founders-label")}</div>
 									<div>
 										<span className="section-intro-people-icon">
 											<svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
@@ -53,23 +56,10 @@ export function Hero() {
 						<div className="col-10">
 							<div className="section-intro-box">
 								<p>
-									Bez střetu zájmů. <b>Pro dlouhodobou ochranu a zhodnocení</b>{' '}
-									vašeho majetku.
+									<Trans i18nKey="hero.tagline" components={{ bold: <b /> }} />
 								</p>
-								<p>
-									Zajišťujeme dlouhodobou správu a promyšlené rozložení majetku,
-									včetně jeho mezinárodního umístění. Vybíráme vhodné privátní
-									banky, vyjednáváme s nimi optimální podmínky a udržujeme přehled
-									o všech bankovních účtech a investicích, aby bylo vaše portfolio
-									řízeno efektivně a transparentně.
-								</p>
-								<p>
-									Na základě vašich cílů připravujeme individuální investiční
-									strategii a průběžně sledujeme rizika i měnovou expozici.
-									Pravidelně poskytujeme srozumitelný reporting o vývoji majetku a
-									plánujeme jeho čerpání tak, aby dlouhodobě odpovídalo vašim
-									potřebám a záměrům.
-								</p>
+								<p>{t("hero.description-1")}</p>
+								<p>{t("hero.description-2")}</p>
 							</div>
 						</div>
 					</div>

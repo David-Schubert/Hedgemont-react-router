@@ -45,5 +45,9 @@ section {
 		&:last-of-type {
 			margin-bottom: 0;
 		}
+
+		+ .linkedin {
+			margin-top: mixins.fluid(16, 20)
+		}
 	}
 }
