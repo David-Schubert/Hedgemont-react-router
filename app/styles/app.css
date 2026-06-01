@@ -6309,7 +6309,7 @@ section {
   margin-bottom: 0.5333333333em;
   color: #000014;
   line-height: 1.08;
-  font-size: clamp(64px, 6.4814814815vi + 26.6666666667px, 120px);
+  font-size: clamp(48px, 8.3333333333vi + 0px, 120px);
 }
 
 .section-intro-top {
