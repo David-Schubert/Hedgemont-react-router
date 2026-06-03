@@ -18,7 +18,7 @@ export function Partners() {
           <p>{t("partners.michal.description")}</p>
           <a
               className="linkedin"
-              href=""
+              href="https://www.linkedin.com/in/michal-navr%C3%A1til-15862566/"
               target="_blank"
               rel="noopener noreferrer"
           >
@@ -38,7 +38,7 @@ export function Partners() {
           <p>{t("partners.ludvik.description")}</p>
           <a
               className="linkedin"
-              href=""
+              href="https://www.linkedin.com/in/ludvik-juricka-52965b15/"
               target="_blank"
               rel="noopener noreferrer"
           >
@@ -58,7 +58,7 @@ export function Partners() {
           <p>{t("partners.ondrej.description")}</p>
           <a
               className="linkedin"
-              href=""
+              href="https://www.linkedin.com/in/ondrejzemek/"
               target="_blank"
               rel="noopener noreferrer"
           >
@@ -78,7 +78,7 @@ export function Partners() {
           <p>{t("partners.jakub.description")}</p>
           <a
               className="linkedin"
-              href=""
+              href="https://www.linkedin.com/in/jakub-veiner-64096382/"
               target="_blank"
               rel="noopener noreferrer"
           >
