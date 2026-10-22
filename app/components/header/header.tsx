@@ -7,7 +7,11 @@ const LOCK_CLASS = "lock-scroll";
 const LINK_SELECTOR = ".nav-item-link";
 const HEADER_SMALL_CLASS = "header-small";
 
-export function Header() {
+type Props = {
+  showArticles: boolean;
+};
+
+export function Header({ showArticles }: Props) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isSmall, setIsSmall] = useState(false);
@@ -55,7 +59,7 @@ export function Header() {
           <div className="col-10">
             <div className="navbar">
               <div className="navbar-logo">
-                <a href="#intro" onClick={closeMenu}>
+                <a href="/#intro" onClick={closeMenu}>
                   <picture>
                     <source
                       media="(max-width: 576px)"
@@ -85,27 +89,34 @@ export function Header() {
                     <LanguageSwitcher />
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="#partneri">
+                    <a className="nav-item-link" href="/#partneri">
                       {t("navigation.partners", "Partneři")}
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="#nase-hodnoty">
+                    <a className="nav-item-link" href="/#nase-hodnoty">
                       {t("navigation.values", "Naše hodnoty")}
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="#sluzby">
+                    <a className="nav-item-link" href="/#sluzby">
                       {t("navigation.services", "Služby")}
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="#prubeh-spoluprace">
+                    <a className="nav-item-link" href="/#prubeh-spoluprace">
                       {t("navigation.collaboration", "Průběh spolupráce")}
                     </a>
                   </li>
+                  {showArticles && (
+                    <li className="nav-item">
+                      <a className="nav-item-link" href="/#clanky">
+                        {t("navigation.articles", "Články")}
+                      </a>
+                    </li>
+                  )}
                   <li className="nav-item">
-                    <a className="nav-item-link" href="#kontakt">
+                    <a className="nav-item-link" href="/#kontakt">
                       {t("navigation.contact", "Kontakt")}
                     </a>
                   </li>
