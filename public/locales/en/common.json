@@ -9,6 +9,7 @@
     "nav-label": "Main navigation"
   },
   "navigation": {
+    "articles": "Articles",
     "collaboration": "Collaboration process",
     "contact": "Contact",
     "partners": "Partners",
@@ -152,6 +153,12 @@
       "title": "Service and strategy maintenance",
       "description": "We continuously monitor and adapt your portfolio to market developments. Long-term service and a personal approach are our commitment to your financial stability."
     }
+  },
+  "articles": {
+    "title": "Articles",
+    "back": "Back to articles",
+    "subscribe": "Subscribe to the newsletter",
+    "read-on-substack": "Read on Substack"
   },
   "carousel": {
     "prev": "Previous",

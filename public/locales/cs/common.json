@@ -9,6 +9,7 @@
     "nav-label": "Hlavní navigace"
   },
   "navigation": {
+    "articles": "Články",
     "collaboration": "Průběh spolupráce",
     "contact": "Kontakt",
     "partners": "Partneři",
@@ -152,6 +153,12 @@
       "title": "Servis a udržování strategie",
       "description": "Vaše portfolio neustále hlídáme a adaptujeme na vývoj trhu. Dlouhodobý servis a osobní přístup jsou pro nás závazkem k vaší finanční stabilitě."
     }
+  },
+  "articles": {
+    "title": "Články",
+    "back": "Zpět na články",
+    "subscribe": "Odebírat newsletter",
+    "read-on-substack": "Číst na Substacku"
   },
   "carousel": {
     "prev": "Předchozí",

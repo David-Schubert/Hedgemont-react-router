@@ -16,6 +16,12 @@
       "name": "Vít Sedláček"
     }
   },
+  "articles": {
+    "back": "Zpět na články",
+    "read-on-substack": "Číst na Substacku",
+    "subscribe": "Odebírat newsletter",
+    "title": "Články"
+  },
   "carousel": {
     "next": "Další",
     "prev": "Předchozí"
@@ -69,6 +75,7 @@
     "title": "HedgeMont – nezávislá správa majetku"
   },
   "navigation": {
+    "articles": "Články",
     "collaboration": "Průběh spolupráce",
     "contact": "Kontakt",
     "partners": "Partneři",
