@@ -13,6 +13,7 @@ import {
 import type { Route } from "./+types/root";
 import { useChangeLanguage } from "~/utils/i18n";
 import { i18next } from "~/utils/i18next.server";
+import { getArticles } from "~/utils/substack.server";
 import "./styles/app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -20,8 +21,11 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const locale = await i18next.getLocale(request);
-  return { locale };
+  const [locale, articles] = await Promise.all([
+    i18next.getLocale(request),
+    getArticles(),
+  ]);
+  return { locale, hasArticles: articles.length > 0 };
 }
 
 export const handle = {
@@ -33,7 +37,10 @@ export function useRootLoaderData() {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { locale } = useRootLoaderData() ?? { locale: "cs" };
+  const { locale, hasArticles } = useRootLoaderData() ?? {
+    locale: "cs",
+    hasArticles: false,
+  };
 
   useChangeLanguage(locale);
 
@@ -46,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Header />
+        <Header showArticles={hasArticles} />
         {children}
         <Footer />
         <ScrollRestoration />

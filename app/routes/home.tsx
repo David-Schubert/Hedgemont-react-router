@@ -5,14 +5,23 @@ import { Partners } from "~/components/main/sections/partners/partners";
 import { Values } from "~/components/main/sections/values/values";
 import { Services } from "~/components/main/sections/services/services";
 import { Collaboration } from "~/components/main/sections/collaboration/collaboration";
+import { Articles } from "~/components/main/sections/articles/articles";
 import { Contact } from "~/components/main/sections/contact/contact";
 import { i18next } from "~/utils/i18next.server";
+import { getArticleSummaries } from "~/utils/substack.server";
+
+const ARTICLES_LIMIT = 10;
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const t = await i18next.getFixedT(request, "common");
+  const [t, articles] = await Promise.all([
+    i18next.getFixedT(request, "common"),
+    getArticleSummaries(ARTICLES_LIMIT),
+  ]);
+
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    articles,
   };
 }
 
@@ -23,7 +32,7 @@ export function meta({ data }: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <main>
       <Hero />
@@ -32,6 +41,7 @@ export default function Home() {
       <Values />
       <Services />
       <Collaboration />
+      <Articles articles={loaderData.articles} />
       <Contact />
     </main>
   );

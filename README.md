@@ -34,6 +34,21 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
+## Substack articles
+
+Articles are loaded server-side from the publication RSS feed (`<SUBSTACK_URL>/feed`) and shown
+in the "Články" section on the homepage, each with a detail page at `/clanky/:slug`.
+Set the publication URL in the `SUBSTACK_URL` environment variable:
+
+```bash
+SUBSTACK_URL=https://hedgemont.substack.com npm run dev
+
+docker run -p 3000:3000 -e SUBSTACK_URL=https://hedgemont.substack.com my-app
+```
+
+Without it the section and its navigation link are hidden. The feed is cached in memory for
+10 minutes and holds only the ~20 newest posts; older article URLs redirect to Substack.
+
 ## Building for Production
 
 Create a production build:

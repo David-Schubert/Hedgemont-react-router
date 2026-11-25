@@ -1,0 +1,221 @@
+@use '../modules/variables' as variables;
+@use '../modules/mixins' as mixins;
+
+.article {
+	// top padding clears the fixed header
+	padding: mixins.fluid(140, 240) 0
+		mixins.fluid(variables.$section-min-padding-y, variables.$section-padding-y);
+}
+
+.article-body {
+	max-width: 800px;
+}
+
+.article-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: mixins.fluid(32, 56);
+	font-weight: variables.$font-weight-normal;
+	text-decoration: none;
+
+	&,
+	&:hover,
+	&:active {
+		color: variables.$color-base;
+	}
+
+	svg {
+		fill: currentColor;
+		@include mixins.transition(transform);
+	}
+
+	&:hover svg {
+		transform: translateX(-4px);
+	}
+}
+
+.article-meta {
+	margin-bottom: mixins.fluid(16, 24);
+	font-size: mixins.fluid(14, 16);
+	font-weight: variables.$font-weight-normal;
+	opacity: 0.6;
+}
+
+.article-title {
+	margin-bottom: 0.4em;
+	line-height: 1.19;
+	font-size: mixins.fluid(36, 64);
+}
+
+.article-subtitle {
+	margin-bottom: mixins.fluid(32, 56);
+	font-size: mixins.fluid(18, 24);
+	line-height: 1.5;
+}
+
+// HTML from Substack, see allowed tags and classes in substack.server.ts
+.article-content {
+	font-size: mixins.fluid(16, 20);
+	line-height: 1.7;
+	overflow-wrap: break-word;
+
+	p,
+	ul,
+	ol,
+	blockquote,
+	figure,
+	pre,
+	table,
+	iframe {
+		margin-bottom: 1.5em;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 1.6em;
+	}
+
+	h1,
+	h2 {
+		line-height: 1.19;
+		font-size: mixins.fluid(26, 40);
+	}
+
+	li p {
+		margin-bottom: 0.5em;
+	}
+
+	figure {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	figcaption,
+	.image-caption {
+		margin-top: 12px;
+		font-size: 14px;
+		text-align: center;
+		opacity: 0.7;
+	}
+
+	blockquote {
+		margin-right: 0;
+		margin-left: 0;
+		padding-left: mixins.fluid(16, 24);
+		border-left: 3px solid variables.$color-primary-500;
+	}
+
+	.pullquote {
+		margin: 1.5em 0;
+		padding: 1em 0;
+		border-top: 1px solid variables.$color-gray-100;
+		border-bottom: 1px solid variables.$color-gray-100;
+		line-height: 1.3;
+		font-family: variables.$font-family-titles;
+		font-size: mixins.fluid(22, 32);
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.callout-block {
+		margin-bottom: 1.5em;
+		padding: mixins.fluid(24, 40);
+		background-color: variables.$color-gray-200;
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.button {
+		display: inline-block;
+		padding: 20px 32px;
+		background-color: variables.$color-primary-500;
+		text-decoration: none;
+		font-size: mixins.fluid(14, 16);
+		font-weight: variables.$font-weight-bold;
+		@include mixins.transition(background-color);
+
+		&,
+		&:hover,
+		&:active {
+			color: variables.$color-white;
+		}
+
+		&:hover {
+			background-color: variables.$color-primary-600;
+		}
+
+		&:active {
+			background-color: variables.$color-primary-700;
+		}
+	}
+
+	iframe {
+		max-width: 100%;
+		border: 0;
+	}
+
+	.youtube-inner {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		margin-bottom: 1.5em;
+
+		iframe {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+	}
+
+	table {
+		display: block;
+		overflow-x: auto;
+	}
+
+	.footnote {
+		display: flex;
+		gap: 12px;
+		font-size: 14px;
+
+		p {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	.footnote-anchor,
+	.footnote-number {
+		text-decoration: none;
+	}
+
+	.footnote-anchor {
+		vertical-align: super;
+		font-size: 0.7em;
+	}
+}
+
+.article-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 24px 40px;
+	margin-top: mixins.fluid(40, 80);
+	padding-top: mixins.fluid(32, 56);
+	border-top: 1px solid variables.$color-gray-100;
+}
