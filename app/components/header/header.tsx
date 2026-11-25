@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import { LanguageSwitcher } from "~/components/language-switcher/language-switcher";
 
 const ACTIVE_CLASS = "active";
@@ -59,7 +60,7 @@ export function Header({ showArticles }: Props) {
           <div className="col-10">
             <div className="navbar">
               <div className="navbar-logo">
-                <a href="/#intro" onClick={closeMenu}>
+                <Link to="/#intro" onClick={closeMenu}>
                   <picture>
                     <source
                       media="(max-width: 576px)"
@@ -70,7 +71,7 @@ export function Header({ showArticles }: Props) {
                       alt={t("header.logo-alt", "HedgeMont Investment")}
                     />
                   </picture>
-                </a>
+                </Link>
               </div>
               <button
                 className={`navbar-toggle ${active}`}
@@ -89,36 +90,36 @@ export function Header({ showArticles }: Props) {
                     <LanguageSwitcher />
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="/#partneri">
+                    <Link className="nav-item-link" to="/#partneri">
                       {t("navigation.partners", "Partneři")}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="/#nase-hodnoty">
+                    <Link className="nav-item-link" to="/#nase-hodnoty">
                       {t("navigation.values", "Naše hodnoty")}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="/#sluzby">
+                    <Link className="nav-item-link" to="/#sluzby">
                       {t("navigation.services", "Služby")}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-item-link" href="/#prubeh-spoluprace">
+                    <Link className="nav-item-link" to="/#prubeh-spoluprace">
                       {t("navigation.collaboration", "Průběh spolupráce")}
-                    </a>
+                    </Link>
                   </li>
                   {showArticles && (
                     <li className="nav-item">
-                      <a className="nav-item-link" href="/#clanky">
+                      <Link className="nav-item-link" to="/#clanky">
                         {t("navigation.articles", "Články")}
-                      </a>
+                      </Link>
                     </li>
                   )}
                   <li className="nav-item">
-                    <a className="nav-item-link" href="/#kontakt">
+                    <Link className="nav-item-link" to="/#kontakt">
                       {t("navigation.contact", "Kontakt")}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a className="nav-item-link"
