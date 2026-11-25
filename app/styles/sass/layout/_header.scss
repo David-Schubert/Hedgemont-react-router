@@ -40,18 +40,10 @@ nav {
 
 .nav {
 	display: flex;
-	gap: 28px;
+	gap: mixins.fluid(16px, 40px, 1200, 1440);
 	margin: 0;
 	padding: 0;
 	list-style: none;
-
-	@media (min-width: 1280px) {
-		gap: 40px;
-	}
-
-	@media (min-width: 1400px) {
-		gap: 56px;
-	}
 }
 
 .navbar-toggle {

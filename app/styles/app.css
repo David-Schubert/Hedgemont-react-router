@@ -6051,20 +6051,10 @@ nav {
 
 .nav {
   display: flex;
-  gap: 28px;
+  gap: clamp(16px, 10vi + -104px, 40px);
   margin: 0;
   padding: 0;
   list-style: none;
-}
-@media (min-width: 1280px) {
-  .nav {
-    gap: 40px;
-  }
-}
-@media (min-width: 1400px) {
-  .nav {
-    gap: 56px;
-  }
 }
 
 .navbar-toggle {
